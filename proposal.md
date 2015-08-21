@@ -8,9 +8,12 @@ When considering visual encodings for uncertainty it is imporant to not only
 consider the perceptual accuracy of the encoding but also how the user will
 interpret this uncertainty. 
 
-* it is important when designing visual encodings of uncertainty to understand the user
+* it is important when designing visual encodings of uncertainty 
+  to understand the user
 * much of this is handled on a case by case basis
 * why are different tools developed for similar tasks?
+
+{>> important to say who's decisions we are trying to model <<}
 
 Concepts such as personality factors [@ref] and cognitive biases [@ref] have
 previously been discussed by the visualization community. However, these
@@ -19,16 +22,20 @@ the other hand, differ on a case by case basis. The same user may choose
 different heuristics for the same tasks and two different users may choose
 different heuristics for the same task.
 
-* understanding the final decision making process that the tool will use
-  is what’s important
+* it's important for the tool designer to understand the final decision 
+  making process that the tool will use is what’s important
+* don't consider it formally or the alternative heuristics/strategies
 
-In summary are contributions are:
+In summary our contributions are:
 
-* we introduce problem solving heuristics from cog sci
+* we introduce problem solving heuristics
 * map these to previous design study work on uncertainty/parameter space exploration
-* potential design guidelines
+* potential design guidelines allowing visualization designers to design
+  better (more easily adopted) visualization tools faster (fewer iterations)
 
 {>> another benefit is that these methods have methodologies for identifying them and studying them <<}
+
+{>> can this be used to better identify a successful optimization design study? <<}
 
 # Problem solving strategies
 
@@ -56,12 +63,13 @@ from the adaptive decision maker:
 
 ## Satisficing
 
-* first acceptable alternative seen is the one selected
+* the first acceptable alternative that is encoutered is selected
+* acceptable is having factors above the acceptable value
 
 ## Lexicographic
 
-* the first acceptable alternative that is encoutered is selected
-* acceptable is having factors above the acceptable value
+* sort by most important attribute
+* ties are broken by further attributes in order of importance
 
 ## Elimination by aspects
 
@@ -169,6 +177,32 @@ Select a point in output space and see which inputs generated that.
   - inverse design
   - limit by performance limits, but simultaneously
 
+### 3DCT scanning positions
+
+**type:** equal weight?
+
+trying to find optimal positions of a materials for 
+placing materials for scanning
+  - sensitivity of placement is important
+  - not sure but maybe equal weights?
+  - system only concentrated on 2/x parameters...
+
+### Berger 2011
+
+**type:** Lexicographic
+
+More of an exploration tool than one to really target and find an optimum
+  - talks about wanting to find an optimum though
+  - tradeoffs around a particular focus point
+
+### Paraglide
+
+**type:** WADD???
+
+Wants to understand how many different behaviors a model has
+  - allows a combination of objectives into a distance vector
+  - distance measures are a weighting criteria basically
+
 # Discussion
 
 Some interesting facts so far:
@@ -201,4 +235,9 @@ in the design study papers and in the VPSA paper:
 # Conclusion
 
 yay! 
+
+# Other papers
+
+* [@Berger:2010]
+* [@Gratzl:2013]
 
