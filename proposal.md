@@ -46,6 +46,30 @@ In summary our contributions are:
 * *definition*: selecting the best candidate amongst a number of 
   alternatives where the candidates have a number of competing objectives
 
+|Paper|Citation|Heuristic|Class|
+|:-----|:-----|:-----|:-----|
+|Visual analytics decision support environment for epidmic modeling and response evaluation|Afzal:2011|LEX|Science|
+|Visual Optimality and Stability Analysis of 3DCT Scan Positions|Amirkhanov:2010|EQW|Engineering|
+|Uncertainty-Aware Exploration of Continuous Parameter Spaces Using Multivariate Prediction|Berger:2011|LEX|Engineering|
+|ParaGlide: Interactive Parameter Space Partitioning for Computer Simulations|Bergner:2013|WADD|Engineering|
+|Vismon: Facilitating analysis of trade-offs, uncertainty, and sensitivity in fisheries management decision making|Booshehrian:2012|EBA|Policy making|
+|Parameter Sensitivity Visualization in DTI Fiber Tracking|Brecheisen:2009|EQW|Science|
+|Result-Driven Exploration of Simulation Parameter Spaces for Visual Effects Design|Bruckner:2010|MCD|Design|
+|Design by Dragging: An Interface for Creative Forward and Inverse Design with Simulation Ensembles|Coffey:2013|FRQ|Engineering|
+|Model Space Visualization for Multivariate Linear Trend Discovery|Guo:2009|None|N/A|
+|Interactive visual analysis of families of function graphs|Konyha:2006|None|Engineering|
+|Supporting the integrated visual analysis of input parameters and simulation trajectories|Luboschik:2014|LEX|Science|
+|Design Galleries: A general approach to setting parameters for computer graphics and animation|Marks:1997|LEX|Design|
+|Interactive visual steering - Rapid visual prototyping of a common rail injection system|Matkovic:2008|None|Engineering/science|
+|Interactive Visual Analysis of Complex Scientific Data as Families of Data Surfaces|Matkovic:2009|EBA|Engineering|
+|HyperMoVal: Interactive visual validation of regression models for real-time visualization|Piringer:2010|None|Validation|
+|Ensemble-Vis: A Framework for the Statistical Visualization of Ensemble Data|Potter:2009|None|Science|
+|Visualization of parameter space for image analysis|Pretorius:2011|LEX|Engineering|
+|Visualization for functional design|Spence:1995|EBA|Engineering|
+|Tuner: Principled Parameter Finding for Image Segmentation Algorithms Using Visual Response Surface Exploration|Torsney-Weir:2011|LEX|Engineering|
+|A Visual Analysis Concept for the Validation of Geoscientific Simulation Models|Unger:2012|None|Validation|
+|World lines|Waser:2010|EBA|Policy making/training|
+
 ## Heuristics
 
 from the adaptive decision maker:
@@ -99,30 +123,17 @@ user characterization, or case study.
 
 {>> this should probably become a table... <<}
 
-## Policy making papers
+## Validation papers
 
-### Vismon
+### Unger 2012
 
-**type:** Elimination by aspects
+**type**: None
 
-The paper repeatedly refers to filtering strategies by constraints.
-  - section 3.3
-  - section 1, second column
-  - the constraint pane is dedicated to reducing the 
-    input and output space by attrribute
-
-### Decision support for epidemic modeling
-
-**type:** Lexicographic
-
-The paper allows the user to compare decisions based on a single criterion.
-  - section 3.3
-  - comparisons against a primary decision path
-  - only can evaluate based on one attribute
+More about validation exploration and not about decision making
 
 ### Hypermoval
 
-**type:** ??? not really any
+**type**: ??? not really any
 
 No strong focus on decision making in the paper
 
@@ -132,9 +143,38 @@ the sampled data points.
     factor at a time (sec 6.1)
   - additional parameters are evaluated against previous models
 
+
+## Policy making papers
+
+### Vismon
+
+**type**: Elimination by aspects
+
+The paper repeatedly refers to filtering strategies by constraints.
+  - section 3.3
+  - section 1, second column
+  - the constraint pane is dedicated to reducing the 
+    input and output space by attrribute
+
+### Decision support for epidemic modeling
+
+**type**: Lexicographic
+
+The paper allows the user to compare decisions based on a single criterion.
+  - section 3.3
+  - comparisons against a primary decision path
+  - only can evaluate based on one attribute
+
 ### Interactive visual steering
 
 not really about decision making
+
+### Matkovic 2009
+
+**type**: MCD
+
+engineers filter out unwanted simulations based on a certain factor and 
+then iteratively filter from there (Section 5.3)
 
 ### Interactive visual analysis of families of function graphs
 
@@ -144,7 +184,7 @@ Trying to figure out what parameters affect the output
 
 ### World lines
 
-**type:** Elimination by aspects
+**type**: Elimination by aspects
 
 Goal is to rapidly eliminate poor solutions.
   - see section 8.2 and section 10
@@ -158,12 +198,26 @@ Note: weird this is different from epidemic modeling...
 
 ### Design galleries
 
-**type:** Lexicographic
+**type**: Lexicographic
 
 Distance metric can be seen as the weighting function
   - section 2.3, hierarchical sorting/arrangement
 
+### FluidExplorer
+
+**type**: MCD
+
+Clusters outputs into similar sequences
+  - user selected a candidate item and then the system 
+    shows similar items
+
 ## Engineering papers
+
+### Paramorama
+
+**type**: LEX
+
+Finding an optimum segmentation by hierarchical grouping of parameters
 
 ### Berger 2011
 
@@ -171,7 +225,7 @@ Not really about optimization even, just SA and PSA
 
 ### Visualization for functional design
 
-**type:** Elimination by aspects
+**type**: Elimination by aspects
 
 Select a point in output space and see which inputs generated that.
   - inverse design
@@ -179,7 +233,7 @@ Select a point in output space and see which inputs generated that.
 
 ### 3DCT scanning positions
 
-**type:** equal weight?
+**type**: equal weight?
 
 trying to find optimal positions of a materials for 
 placing materials for scanning
@@ -189,7 +243,7 @@ placing materials for scanning
 
 ### Berger 2011
 
-**type:** Lexicographic
+**type**: Lexicographic
 
 More of an exploration tool than one to really target and find an optimum
   - talks about wanting to find an optimum though
@@ -197,11 +251,55 @@ More of an exploration tool than one to really target and find an optimum
 
 ### Paraglide
 
-**type:** WADD???
+**type**: WADD?
 
 Wants to understand how many different behaviors a model has
   - allows a combination of objectives into a distance vector
   - distance measures are a weighting criteria basically
+
+### DTI fiber tracking
+
+**type**: EQW?
+
+looking at stopping criteria and how it affects streamline length
+  - have different ways of measuring length though
+  - examining one factor at a time
+  - not clear exactly how one would choose a stopping criteria
+
+### Coffey 2013
+
+**type**: FRQ?
+
+Want to find goal configuration of a needle
+  - basically starting at a particular candidate and 
+    changing locally to others
+  - comparison is done a few at a time though
+
+## Science papers
+
+### Luboschik 2014
+
+**type**: LEX
+
+* specifically calls out decision making in terms of selecting where to sample
+* collapses the parameter space into a 1D representation
+* sorting of the 1D space based on euclidean distance
+
+### Potter 2009
+
+**type**: None
+
+More about exploring the outputs than acting on them
+
+## Unclassified papers
+
+### Guo 2008
+
+**type**: None
+
+Idea is to find linear trends in data through an interface
+  - not really about optimization
+  - could call the model selection decision making but not really
 
 # Discussion
 
