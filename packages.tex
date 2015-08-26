@@ -1,0 +1,65 @@
+%% These three lines bring in essential packages: ``mathptmx'' for Type 1
+%% typefaces, ``graphicx'' for inclusion of EPS figures. and ``times''
+%% for proper handling of the times font family.
+
+\usepackage{tikz}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{subcaption}
+
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+%% natbib stuff
+\usepackage[numbers]{natbib}
+
+%% tightlist is an artifact from pandoc...
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%% We encourage the use of mathptmx for consistent usage of times font
+%% throughout the proceedings. However, if you encounter conflicts
+%% with other math-related packages, you may want to disable it.
+
+%% This turns references into clickable hyperlinks.
+\usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} %,colorlinks
+\hypersetup{
+  pdfauthor = {},
+  pdftitle = {},
+  pdfsubject = {},
+  pdfkeywords = {},
+  colorlinks=true,
+  linkcolor= black,
+  citecolor= black,
+  pageanchor=true,
+  urlcolor = black,
+  plainpages = false,
+  linktocpage
+}
+
+% notes for everyone
+% remove the draft argument to remove all comments and the index
+% to check the paper size, submit, etc
+\usepackage[multiuser,marginclue,nomargin,inline,index]{fixme}
+%\usepackage[usenames,dvipsnames]{color}
+\definecolor{ttwgreen}{RGB}{75,135,73}
+\fxusetheme{colorsig}
+\FXRegisterAuthor{tm}{atm}{\color{red}TM}
+\FXRegisterAuthor{ttw}{attw}{\color{ttwgreen}TTW} % creates ttwnote, ttwwarning, ttwerror, ttwfatal commands
+
+% comments in square brackets
+\makeatletter
+\renewcommand*\FXLayoutInline[3]{%
+  {\@fxuseface{inline}\ignorespaces[#3 \fxnotename{#1}: #2]}}
+\makeatother
