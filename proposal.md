@@ -30,7 +30,7 @@ In summary our contributions are:
 
 * we introduce problem solving heuristics
 * map these to previous design study work on uncertainty/parameter space exploration
-* potential design guidelines allowing visualization designers to design
+* discussion for implications for design allowing visualization designers to design
   better (more easily adopted) visualization tools faster (fewer iterations)
 
 {>> another benefit is that these methods have methodologies for identifying them and studying them <<}
@@ -45,30 +45,6 @@ In summary our contributions are:
 * general decisions are more common in vis
 * *definition*: selecting the best candidate amongst a number of 
   alternatives where the candidates have a number of competing objectives
-
-|Paper|Citation|Heuristic|Class|
-|:-----|:-----|:-----|:-----|
-|Visual analytics decision support environment for epidmic modeling and response evaluation|Afzal:2011|LEX|Science|
-|Visual Optimality and Stability Analysis of 3DCT Scan Positions|Amirkhanov:2010|EQW|Engineering|
-|Uncertainty-Aware Exploration of Continuous Parameter Spaces Using Multivariate Prediction|Berger:2011|LEX|Engineering|
-|ParaGlide: Interactive Parameter Space Partitioning for Computer Simulations|Bergner:2013|WADD|Engineering|
-|Vismon: Facilitating analysis of trade-offs, uncertainty, and sensitivity in fisheries management decision making|Booshehrian:2012|EBA|Policy making|
-|Parameter Sensitivity Visualization in DTI Fiber Tracking|Brecheisen:2009|EQW|Science|
-|Result-Driven Exploration of Simulation Parameter Spaces for Visual Effects Design|Bruckner:2010|MCD|Design|
-|Design by Dragging: An Interface for Creative Forward and Inverse Design with Simulation Ensembles|Coffey:2013|FRQ|Engineering|
-|Model Space Visualization for Multivariate Linear Trend Discovery|Guo:2009|None|N/A|
-|Interactive visual analysis of families of function graphs|Konyha:2006|None|Engineering|
-|Supporting the integrated visual analysis of input parameters and simulation trajectories|Luboschik:2014|LEX|Science|
-|Design Galleries: A general approach to setting parameters for computer graphics and animation|Marks:1997|LEX|Design|
-|Interactive visual steering - Rapid visual prototyping of a common rail injection system|Matkovic:2008|None|Engineering/science|
-|Interactive Visual Analysis of Complex Scientific Data as Families of Data Surfaces|Matkovic:2009|EBA|Engineering|
-|HyperMoVal: Interactive visual validation of regression models for real-time visualization|Piringer:2010|None|Validation|
-|Ensemble-Vis: A Framework for the Statistical Visualization of Ensemble Data|Potter:2009|None|Science|
-|Visualization of parameter space for image analysis|Pretorius:2011|LEX|Engineering|
-|Visualization for functional design|Spence:1995|EBA|Engineering|
-|Tuner: Principled Parameter Finding for Image Segmentation Algorithms Using Visual Response Surface Exploration|Torsney-Weir:2011|LEX|Engineering|
-|A Visual Analysis Concept for the Validation of Geoscientific Simulation Models|Unger:2012|None|Validation|
-|World lines|Waser:2010|EBA|Policy making/training|
 
 ## Heuristics
 
