@@ -1,117 +1,153 @@
-When considering visual encodings for uncertainty it is imporant to not
-only consider the perceptual accuracy of the encoding but also how the
-user will interpret this uncertainty.
+Visualization research right now is divided into two distinct fronts. On
+one side are lab studies while on the other side are design studies.
+
+Lab studies concentrate mostly on perceptual aspects which are low-level visual
+understanding and are considered to be more or less fixed across humans
+(barring exceptions like color-blindness). Furthermore, the testing
+methodologies for studies such as these are relatively mature with fixed
+objectives and protocols. However, what they can measure is limited but highly
+generalizable. Most studies done this way deal with preattentive processing or
+very simple tasks. Because of this, visualizations tested in this way must be
+boiled down to their raw elements and even adding simple interactions can make
+getting useful results difficult.  Furthermore, it is not always clear exactly
+how to apply the results of these studies in when designing visualization
+tools. There is much more than perception to building a tool that can be used
+in a real-world context though.
+
+On the other hand, design studies are highly focused on a particular
+application scenario. While not as generalizable, the end goal of a design
+study is a tool that is designed to be used in a real-world application
+scenario. In addition to selecting proper visual encodings that are
+perceptually accurate, the integration of multiple views as well as
+interactions between these views must be taken into account. In the course of
+designing one of these tools one must also carefully consider what tasks the
+intended users want to accomplish as well as how they will employ these tasks
+to complete their analysis goal. However, the feedback in design studies is
+necessarily qualitative and fuzzy. A new visualization tool involves changing
+many, many variables and any effect seen as a result of a focused lab study
+(for example) could be attributed to any combination of these changes.
+Therefore, while some of the knowledge gained in designing these tools is
+\emph{transferable} to other visualization tools, the results are often not
+\emph{generalizable} to the larger populace. Part of this is because different
+users have different problem solving strategies. (point out shortcomings of
+Gestalt theory?)
+
+There is still a large gap in research between the results from user studies
+and design studies. Some researchers have attempted to bridge this gap with
+task taxonomies (cite Bremer and another one) or models (cite Keim and
+another). These are largely focused on ``what'' users are doing though and not
+``why'' they are doing it (even Bremer). What is missing is a better modeling
+of the user from psychological principles, namely, what is the overall problem
+solving process of the user in terms of solving the problem of extracting
+information from data? By making user modeling more explicit we could shorten
+the number of iterations for design studies since we would have a better
+understanding beforehand what visual encodings and interactions will help the
+user accomplish their goal beyond perceptual understanding. In addition, better
+user modeling will reduce the number of ``unknown independent variables'' when
+conducting a user study and will lead to being able to run lab studies on much
+more complex visual encodings and interactions and reason about the results
+better (and is another independent variable).
+
+For example, we ran a lab study with two different interfaces in order
+to test if a simple visual encoding of the sensitivity of a parameter to
+a simulation model will make a more effective visualization. One issue
+with this system is the relatively open-ended nature of the task: the
+user could select any reasonable value for the expected return and still
+complete the study. Before looking at the results we found that the
+participants in the study could be divided into two different groups
+based on their strategy in selecting their portfolio. Based on the
+strategy we we able to find that the ``sweet spotters'' had a
+statistically significant preference for the SA interface over the
+other, while the ``risk fixer'' group showed no clear interface
+preference. We did not anticipate the two different groups when
+designing the study (we thought everyone would be a ``sweet spotter'')
+but knowing that there would be a way to classify the users beforehand
+would have beeen helpful. With better user characterization this would
+have been possible.
+
+The visualization community has already started examining personality
+types and how those correspond to visualizations. While this does make
+the visualization choice more ``personal'', psychological personality
+types are designed to be consistent over time and therefore cannot
+account for the case where the same user will use different problem
+solving strategies depending on the task~\citep{ref}. We argue for a more
+situation-based approach to modelling a user interacting with a
+visualization tool. We propose to look at the entire visual exploration
+process as a case of solving a complex problem. Complex problem solving
+can be defined as: ``CPS occurs to overcome barriers between a given
+state and a desired goal state by means of behavioral and/or cognitive,
+multi-step activities''~\citep{Frensch:2005}. Within this framework is
+insight which has been defined in many ways but all definitions are
+remarkably similar to the definition from Mayer for learning which is
+``information aquisition'' and ``knowledge construction''~\citep{ref}. We
+feel that the methods from e-learning research can be used to measure
+the aquisition of insights.
+
+Similarly, one of the major reasons for using a visualization system,
+especialy one with a model behind it, in the first place is for making
+actionable decisions. To this end, we should look at the work that
+researchers have done on decision making where they have various
+heuristics how people go about making decisions. Here, decisions are
+defined as making a selection for a ``best'' candidate from a set of
+possible options (need to double check the exact definition).
+
+In this proposal we begin the overall examination of this process and
+its relevance and benefits to visualization research by first looking
+into the decision making heuristics but later we plan to examine the
+entire model. This is a huge project though.
+
+In short, we want to examine how decision making relates to:
 
 \begin{itemize}
 \tightlist
 \item
-  it is important when designing visual encodings of uncertainty to
-  understand the user
+  the usefulness in visualization
 \item
-  right now much of this is handled on a case by case basis or not
-  identified
-\item
-  why are different tools developed for similar tasks?
+  implications for design of visualization tools
 \end{itemize}
 
-\ttwnote{important to say who's decisions we are trying to model}
-
-Concepts such as personality factors \citep{ref} and cognitive biases
-\citep{ref} have previously been discussed by the visualization
-community. However, these factors are designed to be fixed for life.
-Problem solving heuristics, on the other hand, differ on a case by case
-basis. The same user may choose different heuristics for the same tasks
-and two different users may choose different heuristics for the same
-task.
+And answer these questions:
 
 \begin{itemize}
 \tightlist
 \item
-  it's important for the tool designer to understand the final decision
-  making process that the tool will use is what's important
+  What types of users are there?
 \item
-  don't consider it formally or the alternative heuristics/strategies
+  Is this useful to vis?
+\item
+  Is vis already doing this?
+\item
+  What more can be done?
+\item
+  Common decisions in vis systems
 \end{itemize}
 
-For example, we ran a user study with two interfaces. The designer of
-the system was held constant and the two interfaces only differed by the
-addition of a small whisker (see Fig. ???). This was an open-ended
-investment task and participants were asked to report on their
-confidence in using the interfaces as well as their interface
-preference. Based on the interview we conducted with participants, we
-found that they used two different strategies to make their decision
-about which risk/return level was acceptable. When divided into the two
-groups one group (the sweet spotters) showed a strong preference for one
-interface.
+\section{Heuristics}\label{heuristics}
 
-\begin{itemize}
-\tightlist
-\item
-  need a transition here to the benefits of this for vis
-\end{itemize}
+All these heuristics assume that the decision maker (or user in this case)
+is selecting a decision item from a list of discrete choices. Each item
+has multiple attributes (objectives). These objectives are competing with
+each other in the sense that there is no clear optimal choice. 
 
-In summary our contributions are:
+\subsection{Experts in expert
+situations}\label{experts-in-expert-situations}
 
-\begin{itemize}
-\tightlist
-\item
-  we introduce problem solving heuristics
-\item
-  map these to previous design study work on uncertainty/parameter space
-  exploration
-\item
-  discussion for implications for design allowing visualization
-  designers to design better (more easily adopted) visualization tools
-  faster (fewer iterations)
-\end{itemize}
+\subsection{Weighted additive rule}\label{weighted-additive-rule}
 
-\ttwnote{another benefit is that these methods have methodologies for 
-identifying them and studying them}
+The weighted additive rule, proposed by \ttwnote{who?}, considers all
+attributes of the various choices at once and directly considers 
+the weights. The user selects weights for the various attributes and 
+the option with the heighest weighted sum of attributes.
+A version of this strategy considers all attributes evenly but still
+the selection is made based on the total weighted value.
 
-\ttwnote{can this be used to better identify a
-successful optimization design study?}
-
-\section{Problem solving strategies}\label{problem-solving-strategies}
-
-\subsection{Overview}\label{overview}
-
-\begin{itemize}
-\tightlist
-\item
-  difference between ``expert'' decision makers and general decisions
-\item
-  general decisions are more common in vis
-\item
-  \emph{definition}: selecting the best candidate amongst a number of
-  alternatives where the candidates have a number of competing
-  objectives
-\end{itemize}
-
-\subsection{Heuristics}\label{heuristics}
-
-from the adaptive decision maker:
-
-\subsubsection{Weighted additive rule}\label{weighted-additive-rule}
-
-\begin{itemize}
-\tightlist
-\item
-  Qualitative final comparison
-\item
-  weight all objectives by how important they are
-\item
-  the weighted sum determines the ``best'' choice
-\end{itemize}
-
-\subsection{Equal weight}\label{equal-weight}
-
-\begin{itemize}
-\tightlist
-\item
-  subset of weighted additive rule
-\item
-  all objectives are treated equally
-\end{itemize}
+Practical issues with this include mapping attributes to numerical values
+and examining the effects of adjusting the weights. In our evaluation of
+design studies this rule is not directly supported. We considered that
+systems supporting the evaluation of distance functions such as 
+in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
+LineUp~\citep{Gratzl:2013} is the only system as far as we know that
+directly supports the evaluation of numerical weights on objectives.
 
 \subsection{Satisficing}\label{satisficing}
 
@@ -174,8 +210,14 @@ features}\label{frequency-of-goodbad-features}
   number of positive aspects minus number of negative aspects
 \end{itemize}
 
-\section{Design study methodology papers
-tags}\label{design-study-methodology-papers-tags}
+\section{Coding}\label{coding}
+
+\begin{table*}[htb!]
+  \begin{center}
+    \caption{Decision types}
+    \inputfile{paper_codes}
+  \end{center}
+\end{table*}
 
 To see if users indeed use different strategies we coded the 21 papers
 from the visual parameter space analysis paper \citep{Sedlmair:2014}
@@ -183,65 +225,80 @@ with the decision heuristic types above (or none). We found that 6/8 of
 the papers described some sort of heuristic when describing the task
 analysis, user characterization, or case study.
 
-\section{Discussion}\label{discussion}
+\section{Questions}\label{questions}
 
-Some interesting facts so far:
-
-\subsection{Most popular are sorting or
-elimination}\label{most-popular-are-sorting-or-elimination}
+\subsection{What types of users are
+there?}\label{what-types-of-users-are-there}
 
 Lexicographic and elimination by aspects are the most popular heuristics
 by far. Both of these concentrate on one parameter at a time and are
 about filtering alternatives.
 
-\subsection{Satisficing?}\label{satisficing-1}
+\subsection{Is this useful to vis?}\label{is-this-useful-to-vis}
+
+So far, this does seem quite useful. For example, the local to global
+strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
+easily suffer from the limitations of satisficing.
 
 \begin{itemize}
 \tightlist
 \item
-  not sure if this fits with the goals of vis
-
-  \begin{itemize}
-  \tightlist
-  \item
-    vis is about making analytic decisions
-  \item
-    this is more something to watch out for\ldots{} cognitive bias?
-  \end{itemize}
+  maybe something from one of the papers will make it more clear?
 \item
-  is this ever a good strategy/heuristic? \ttwnote{research this}
+  can we test for these decision types? - check
 \end{itemize}
 
-\subsection{Weighted parameter heuristics are
-missing}\label{weighted-parameter-heuristics-are-missing}
-
-This is supported by papers such as LineUp \citep{Gratzl:2013} but none
-of the tools in the vPSA paper work this way
-\ttwwarning{I think...}
-
-\subsection{The decision strategy is never discussed or
-compared}\label{the-decision-strategy-is-never-discussed-or-compared}
-
-in the design study papers and in the VPSA paper:
+\subsection{Is vis already doing this?}\label{is-vis-already-doing-this}
 
 \begin{itemize}
 \tightlist
 \item
-  alternatives never considered
+  ``overview first, details on demand'' - shneiderman
 \item
-  the word ``decision'' is never defined or losely defined
+  ``analysis first'' - keim
 \end{itemize}
 
-\section{Conclusion}\label{conclusion}
-
-yay!
-
-\section{Other papers}\label{other-papers}
+\subsection{What more can be done?}\label{what-more-can-be-done}
 
 \begin{itemize}
 \tightlist
 \item
-  \citep{Berger:2010}
-\item
-  \citep{Gratzl:2013}
+  not sure yet\ldots{}
 \end{itemize}
+
+\subsection{Common decisions in vis
+systems}\label{common-decisions-in-vis-systems}
+
+\begin{itemize}
+\tightlist
+\item
+  do I have enough samples?
+\item
+  what model do I use?
+\item
+  what parameter settings are good?
+\end{itemize}
+
+\subsection{Weighted parameter lists are
+missing}\label{weighted-parameter-lists-are-missing}
+
+Only one of the papers, ParaGlide~\citep{Bergner:2013}, concentrated on a
+weighted strategy. Furthermore, ParaGlide did this though computing and
+investigating a distance metric rather than directly adjusting the
+weights. We're not sure why this is not a very common strategy in the
+tools we examined. As far as we know, there is only one tool published,
+LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
+effect of manipulating weights.
+
+It's not very clear why this is not so common perhaps just momentum? Is
+this hidden in other visualization systems under the monkier of
+``distance metric''? Also, weighting objectives is a relatively
+numerical process and perhaps this is simply done without visualization
+support where, for example, numerical optimization would be very
+effective?
+
+\subsection{Decision strategy is never
+discussed}\label{decision-strategy-is-never-discussed}
+
+Even in the papers focused on decision making, like Vismon, the actual
+decision making process is never clearly articulated.
