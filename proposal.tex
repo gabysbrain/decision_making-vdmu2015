@@ -1,0 +1,247 @@
+When considering visual encodings for uncertainty it is imporant to not
+only consider the perceptual accuracy of the encoding but also how the
+user will interpret this uncertainty.
+
+\begin{itemize}
+\tightlist
+\item
+  it is important when designing visual encodings of uncertainty to
+  understand the user
+\item
+  right now much of this is handled on a case by case basis or not
+  identified
+\item
+  why are different tools developed for similar tasks?
+\end{itemize}
+
+\ttwnote{important to say who's decisions we are trying to model}
+
+Concepts such as personality factors \citep{ref} and cognitive biases
+\citep{ref} have previously been discussed by the visualization
+community. However, these factors are designed to be fixed for life.
+Problem solving heuristics, on the other hand, differ on a case by case
+basis. The same user may choose different heuristics for the same tasks
+and two different users may choose different heuristics for the same
+task.
+
+\begin{itemize}
+\tightlist
+\item
+  it's important for the tool designer to understand the final decision
+  making process that the tool will use is what's important
+\item
+  don't consider it formally or the alternative heuristics/strategies
+\end{itemize}
+
+For example, we ran a user study with two interfaces. The designer of
+the system was held constant and the two interfaces only differed by the
+addition of a small whisker (see Fig. ???). This was an open-ended
+investment task and participants were asked to report on their
+confidence in using the interfaces as well as their interface
+preference. Based on the interview we conducted with participants, we
+found that they used two different strategies to make their decision
+about which risk/return level was acceptable. When divided into the two
+groups one group (the sweet spotters) showed a strong preference for one
+interface.
+
+\begin{itemize}
+\tightlist
+\item
+  need a transition here to the benefits of this for vis
+\end{itemize}
+
+In summary our contributions are:
+
+\begin{itemize}
+\tightlist
+\item
+  we introduce problem solving heuristics
+\item
+  map these to previous design study work on uncertainty/parameter space
+  exploration
+\item
+  discussion for implications for design allowing visualization
+  designers to design better (more easily adopted) visualization tools
+  faster (fewer iterations)
+\end{itemize}
+
+\ttwnote{another benefit is that these methods have methodologies for 
+identifying them and studying them}
+
+\ttwnote{can this be used to better identify a
+successful optimization design study?}
+
+\section{Problem solving strategies}\label{problem-solving-strategies}
+
+\subsection{Overview}\label{overview}
+
+\begin{itemize}
+\tightlist
+\item
+  difference between ``expert'' decision makers and general decisions
+\item
+  general decisions are more common in vis
+\item
+  \emph{definition}: selecting the best candidate amongst a number of
+  alternatives where the candidates have a number of competing
+  objectives
+\end{itemize}
+
+\subsection{Heuristics}\label{heuristics}
+
+from the adaptive decision maker:
+
+\subsubsection{Weighted additive rule}\label{weighted-additive-rule}
+
+\begin{itemize}
+\tightlist
+\item
+  Qualitative final comparison
+\item
+  weight all objectives by how important they are
+\item
+  the weighted sum determines the ``best'' choice
+\end{itemize}
+
+\subsection{Equal weight}\label{equal-weight}
+
+\begin{itemize}
+\tightlist
+\item
+  subset of weighted additive rule
+\item
+  all objectives are treated equally
+\end{itemize}
+
+\subsection{Satisficing}\label{satisficing}
+
+\begin{itemize}
+\tightlist
+\item
+  the first acceptable alternative that is encoutered is selected
+\item
+  acceptable is having factors above the acceptable value
+\end{itemize}
+
+\subsection{Lexicographic}\label{lexicographic}
+
+\begin{itemize}
+\tightlist
+\item
+  sort by most important attribute
+\item
+  ties are broken by further attributes in order of importance
+\item
+  the difference to satisficing is that in lexicographic \emph{all}
+  alternatives are considered, not just the first acceptable one
+\end{itemize}
+
+\subsection{Elimination by aspects}\label{elimination-by-aspects}
+
+\begin{itemize}
+\tightlist
+\item
+  the most important attribute is selected along with a ``minimum
+  acceptable value''
+\item
+  candidates with values below this are eliminated
+\item
+  the next round of filtering starts with the second most important
+  attribute
+\end{itemize}
+
+\subsection{Majority of confirming
+dimensions}\label{majority-of-confirming-dimensions}
+
+\begin{itemize}
+\tightlist
+\item
+  pairwise comparison (major distinction)
+\item
+  number of aspects that are ``better'' in the pair means it wins
+\item
+  loser is eliminated from consideration
+\item
+  winner is compared against the next candidate
+\end{itemize}
+
+\subsection{Frequency of good/bad
+features}\label{frequency-of-goodbad-features}
+
+\begin{itemize}
+\tightlist
+\item
+  number of positive aspects minus number of negative aspects
+\end{itemize}
+
+\section{Design study methodology papers
+tags}\label{design-study-methodology-papers-tags}
+
+To see if users indeed use different strategies we coded the 21 papers
+from the visual parameter space analysis paper \citep{Sedlmair:2014}
+with the decision heuristic types above (or none). We found that 6/8 of
+the papers described some sort of heuristic when describing the task
+analysis, user characterization, or case study.
+
+\section{Discussion}\label{discussion}
+
+Some interesting facts so far:
+
+\subsection{Most popular are sorting or
+elimination}\label{most-popular-are-sorting-or-elimination}
+
+Lexicographic and elimination by aspects are the most popular heuristics
+by far. Both of these concentrate on one parameter at a time and are
+about filtering alternatives.
+
+\subsection{Satisficing?}\label{satisficing-1}
+
+\begin{itemize}
+\tightlist
+\item
+  not sure if this fits with the goals of vis
+
+  \begin{itemize}
+  \tightlist
+  \item
+    vis is about making analytic decisions
+  \item
+    this is more something to watch out for\ldots{} cognitive bias?
+  \end{itemize}
+\item
+  is this ever a good strategy/heuristic? \ttwnote{research this}
+\end{itemize}
+
+\subsection{Weighted parameter heuristics are
+missing}\label{weighted-parameter-heuristics-are-missing}
+
+This is supported by papers such as LineUp \citep{Gratzl:2013} but none
+of the tools in the vPSA paper work this way
+\ttwwarning{I think...}
+
+\subsection{The decision strategy is never discussed or
+compared}\label{the-decision-strategy-is-never-discussed-or-compared}
+
+in the design study papers and in the VPSA paper:
+
+\begin{itemize}
+\tightlist
+\item
+  alternatives never considered
+\item
+  the word ``decision'' is never defined or losely defined
+\end{itemize}
+
+\section{Conclusion}\label{conclusion}
+
+yay!
+
+\section{Other papers}\label{other-papers}
+
+\begin{itemize}
+\tightlist
+\item
+  \citep{Berger:2010}
+\item
+  \citep{Gratzl:2013}
+\end{itemize}
