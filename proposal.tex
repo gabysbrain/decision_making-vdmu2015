@@ -65,23 +65,23 @@ but knowing that there would be a way to classify the users beforehand
 would have beeen helpful. With better user characterization this would
 have been possible.
 
-The visualization community has already started examining personality
-types and how those correspond to visualizations. While this does make
-the visualization choice more ``personal'', psychological personality
-types are designed to be consistent over time and therefore cannot
-account for the case where the same user will use different problem
-solving strategies depending on the task~\citep{ref}. We argue for a more
-situation-based approach to modelling a user interacting with a
-visualization tool. We propose to look at the entire visual exploration
-process as a case of solving a complex problem. Complex problem solving
-can be defined as: ``CPS occurs to overcome barriers between a given
-state and a desired goal state by means of behavioral and/or cognitive,
-multi-step activities''~\citep{Frensch:2005}. Within this framework is
-insight which has been defined in many ways but all definitions are
-remarkably similar to the definition from Mayer for learning which is
-``information aquisition'' and ``knowledge construction''~\citep{ref}. We
-feel that the methods from e-learning research can be used to measure
-the aquisition of insights.
+The visualization community has already started examining personality types and
+how those correspond to visualizations. While this does make the visualization
+choice more ``personal'', psychological personality types are designed to be
+consistent over time and therefore cannot account for the case where the same
+user will use different problem solving strategies depending on the
+task~\citep{ref}. We argue for a more situation-based approach to modelling a
+user interacting with a visualization tool. We propose to look at the entire
+visual exploration process as a case of solving a complex problem. Complex
+problem solving can be defined as: ``CPS occurs to overcome barriers between a
+given state and a desired goal state by means of behavioral and/or cognitive,
+multi-step activities''~\citep{Frensch:2005}. Within this framework is insight
+which has been defined in many ways but all definitions are remarkably similar
+to the definition from Mayer for learning which is ``information aquisition''
+and ``knowledge construction''~\citep{ref}. Even with these definitions though
+there is still the question of how to measure insights in a visualization
+system. We feel that the methods from e-learning research can be used to
+measure the aquisition of insights.
 
 Similarly, one of the major reasons for using a visualization system,
 especialy one with a model behind it, in the first place is for making
@@ -96,41 +96,39 @@ its relevance and benefits to visualization research by first looking
 into the decision making heuristics but later we plan to examine the
 entire model. This is a huge project though.
 
-In short, we want to examine how decision making relates to:
+In short, we want to examine how decision making relates to the usefulness in
+visualization and implications for design of visualization tools.
 
-\begin{itemize}
-\tightlist
-\item
-  the usefulness in visualization
-\item
-  implications for design of visualization tools
-\end{itemize}
-
-And answer these questions:
-
-\begin{itemize}
-\tightlist
-\item
-  What types of users are there?
-\item
-  Is this useful to vis?
-\item
-  Is vis already doing this?
-\item
-  What more can be done?
-\item
-  Common decisions in vis systems
-\end{itemize}
+And, as a result of this proposal we would like to introduce the following
+questions for discussion: is visualization already doing this, what types of
+users are there, the common decision making strategies in visualization
+systems, and should we be steering users to certain decision making strategies.
 
 \section{Heuristics}\label{heuristics}
 
 All these heuristics assume that the decision maker (or user in this case)
 is selecting a decision item from a list of discrete choices. Each item
 has multiple attributes (objectives). These objectives are competing with
-each other in the sense that there is no clear optimal choice. 
+each other in the sense that there is no clear optimal choice. What is also
+important about the heuristics is that depending on how information is 
+presented to participants different decisions heuristics will be employed
+and different optimal selections will be made~\citep{ref}.
 
-\subsection{Experts in expert
-situations}\label{experts-in-expert-situations}
+\begin{table*}[tb]
+  \begin{center}
+    \caption{Decision types}
+    \inputfile{paper_codes}
+  \end{center}
+\end{table*}
+
+To see if users indeed use different strategies we coded the 21 papers
+from the visual parameter space analysis paper \citep{Sedlmair:2014}
+with the decision heuristic types above (or none). We found that 6/8 of
+the papers described some sort of heuristic when describing the task
+analysis, user characterization, or case study.
+
+%\subsection{Experts in expert %situations}
+%\label{experts-in-expert-situations}
 
 \subsection{Weighted additive rule}\label{weighted-additive-rule}
 
@@ -149,135 +147,133 @@ in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
 LineUp~\citep{Gratzl:2013} is the only system as far as we know that
 directly supports the evaluation of numerical weights on objectives.
 
-\subsection{Satisficing}\label{satisficing}
-
-\begin{itemize}
-\tightlist
-\item
-  the first acceptable alternative that is encoutered is selected
-\item
-  acceptable is having factors above the acceptable value
-\end{itemize}
-
 \subsection{Lexicographic}\label{lexicographic}
 
-\begin{itemize}
-\tightlist
-\item
-  sort by most important attribute
-\item
-  ties are broken by further attributes in order of importance
-\item
-  the difference to satisficing is that in lexicographic \emph{all}
-  alternatives are considered, not just the first acceptable one
-\end{itemize}
+Rather than considering all attributes at once the user can instead simply
+order the selections by the most important attribute to them. Ties within this
+attribute are broken by sorting by the second most important attribute and so
+on until a clear candidate appears at the top. This process as been named
+lexicographic~\citep{ref} by the decision making community.
+
+In this visualization literature, this is a realatively common strategy.
+Many visualization systems, for example, Tuner~\cite{Torsney-Weir:2011} and
+Luboschick et al.~\citep{Luboschik:2014} allow the user to prioritize a few
+objective measures and evaluate the outputs based on those few. Naturally,
+when presented with more attributes than can be easily compared between
+one of the standard visualization responses to this issue is to filter
+these attributes down to just the core set. This is a form of dimension 
+reduction.
 
 \subsection{Elimination by aspects}\label{elimination-by-aspects}
 
-\begin{itemize}
-\tightlist
-\item
-  the most important attribute is selected along with a ``minimum
-  acceptable value''
-\item
-  candidates with values below this are eliminated
-\item
-  the next round of filtering starts with the second most important
-  attribute
-\end{itemize}
+Rather than filtering in order to find the optimal decision, one could
+also set thresholds and filter out the unacceptable decisions. This process
+is repeated until a final choice remains. This process is called
+the majority of confirming dimensions~\cite{ref} strategy. 
 
-\subsection{Majority of confirming
-dimensions}\label{majority-of-confirming-dimensions}
-
-\begin{itemize}
-\tightlist
-\item
-  pairwise comparison (major distinction)
-\item
-  number of aspects that are ``better'' in the pair means it wins
-\item
-  loser is eliminated from consideration
-\item
-  winner is compared against the next candidate
-\end{itemize}
+This heuristic is frequently employed in many visualization systems with
+perhaps the system developed by Spence et al.~\citep{Spence:1995} being a
+direct application of this heuristic. The user can interactively filter
+objective (output) dimensions into acceptable and unacceptable regions and
+see that effect on the selections in the parameter space. 
+Vismon~\cite{ref} also uses a similar strategy.
 
 \subsection{Frequency of good/bad
 features}\label{frequency-of-goodbad-features}
 
-\begin{itemize}
-\tightlist
-\item
-  number of positive aspects minus number of negative aspects
-\end{itemize}
+If, like in the elimination by aspects strategy, one can articulate for
+each attribute a good and bad level then one could label each attribute
+of each decision option by this. Then one could simply count the number of
+attributes that are labeled "good" and compare this against the number of
+"bad" labels and select the option with the highest difference. This has
+been called the frequency of good and bad features~\citep{ref}.
 
-\section{Coding}\label{coding}
+This strategy is never directly addressed by the visualization community
+but the closest example we could find was the work by 
+Coffey et al.~\citep{Coffey:2013}. In their system the user could browse
+through simulations and find similar ones which may be closer to what
+the user is looking for \ttwnote{clean up}.
 
-\begin{table*}[htb!]
-  \begin{center}
-    \caption{Decision types}
-    \inputfile{paper_codes}
-  \end{center}
-\end{table*}
+\subsection{Satisficing}\label{satisficing}
 
-To see if users indeed use different strategies we coded the 21 papers
-from the visual parameter space analysis paper \citep{Sedlmair:2014}
-with the decision heuristic types above (or none). We found that 6/8 of
-the papers described some sort of heuristic when describing the task
-analysis, user characterization, or case study.
+Satisficing~\cite{ref} does not consider the entire set of decision options
+holistically. Rather, when employing this strategy, one considers each 
+option one at a time. Whether all attributes of the choice are considered or
+just a few depends on the person but either way the first acceptable option
+encountered is selected.
+
+We did not see any evidence in the visualization of this strategy being
+employed. In some ways it is at odds with visualization tool development.
+Usually, one assumes that all data must be examined. Selecting the number
+of samples to take from a simulation, however, may suffer from this since
+the choice of if sufficient samples have been taken is never evaluated
+in systems such as Tuner~\citep{Torsney-Weir:2011} or 
+Paramorama~\citep{Pretorious:2011}. \ttwnote{maybe delete this...}
+
+\subsection{Majority of confirming
+dimensions}\label{majority-of-confirming-dimensions}
+
+As an alternative to looking at all decision options at once one could 
+instead examine them in a pairwise manner. The "winner" of each pairing is
+compared against the next choice and so on until a final optimal choice
+prevails.
+
+This is also not very common in visualization perhaps because the pairwise
+comparison is quite labor intensive. Also, like satisficing, depending on the
+order that the options are considered one may get a very different outcome. In
+Fluid Explorer~\cite{Bruckner:2010} and Paramorama~\citep{Pretorious:2011} this
+is done by the user manually selecting an optimal candidate simulation from 
+a list of simulation outputs.
+\ttwnote{Eric Brochu's work is probably the best example}
+
 
 \section{Questions}\label{questions}
 
-\subsection{What types of users are
-there?}\label{what-types-of-users-are-there}
+During the workshop we would like to address a number of questions.
+
+\subsection{Is vis already doing this?}
+\label{is-vis-already-doing-this}
+
+One question is do these problem solving heuristics exist already in the
+visualization literature but just in a different name? From the literature
+search we conducted the answer is no. There are elements of task support for
+these heuristics, like filtering, but a comprehensive strategy is never
+identified. Visualization systems are often designed around 
+"overview first, zoom and filter, details on demand"~\cite{Shneiderman} or
+a "global to local" search strategy~\cite{Sedlmair:2014}. These may help to
+address the more global heuristics like weighted additive or lexicographic.
+However, this is at odds with the more comparative heuristics like majority
+of confirming dimensions. \ttwnote{more?}
+
+By addressing these heuristics more directly we could \ttwwarning{What?}
+So far, this does seem quite useful. For example, the local to global
+strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
+easily suffer from the limitations of satisficing.
+
+
+\subsection{What types of users are there?}
+\label{what-types-of-users-are-there}
 
 Lexicographic and elimination by aspects are the most popular heuristics
 by far. Both of these concentrate on one parameter at a time and are
 about filtering alternatives.
 
-\subsection{Is this useful to vis?}\label{is-this-useful-to-vis}
+\subsection{Should we be steering users to certain decision-making strategies?}
 
-So far, this does seem quite useful. For example, the local to global
-strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
-easily suffer from the limitations of satisficing.
+We see this as an open question. Visualization concentrates on information
+presentation. There is evidence that the presentation of information
+will influence which decision making strategy one employs~\citep{ref}.
+On the other hand, in real-world decision making there is often no clear
+optimal decision to be made so it is difficult to evaluate which decision
+making heuristic is best. However, it seems that it is best to at least
+comprehensively examine all the options.
 
-\begin{itemize}
-\tightlist
-\item
-  maybe something from one of the papers will make it more clear?
-\item
-  can we test for these decision types? - check
-\end{itemize}
+\subsection{Common decisions in vis systems}
+\label{common-decisions-in-vis-systems}
 
-\subsection{Is vis already doing this?}\label{is-vis-already-doing-this}
-
-\begin{itemize}
-\tightlist
-\item
-  ``overview first, details on demand'' - shneiderman
-\item
-  ``analysis first'' - keim
-\end{itemize}
-
-\subsection{What more can be done?}\label{what-more-can-be-done}
-
-\begin{itemize}
-\tightlist
-\item
-  not sure yet\ldots{}
-\end{itemize}
-
-\subsection{Common decisions in vis
-systems}\label{common-decisions-in-vis-systems}
-
-\begin{itemize}
-\tightlist
-\item
-  do I have enough samples?
-\item
-  what model do I use?
-\item
-  what parameter settings are good?
-\end{itemize}
+Based on our literature survey we found certaint areas of parameter space
+exploration where a decision is being made.  For example, is the sampling
+sufficient, what model to select, and what parameter settings are good?
 
 \subsection{Weighted parameter lists are
 missing}\label{weighted-parameter-lists-are-missing}
@@ -297,8 +293,12 @@ numerical process and perhaps this is simply done without visualization
 support where, for example, numerical optimization would be very
 effective?
 
-\subsection{Decision strategy is never
-discussed}\label{decision-strategy-is-never-discussed}
+\section{Conclusion}
 
-Even in the papers focused on decision making, like Vismon, the actual
-decision making process is never clearly articulated.
+We have proposed a task-centered idea of evaluating the decisions users
+make while evaluating uncertainty. We have enumerated some common decision
+making heuristics and evaluated if these are currently addressed by 
+visualization systems today. We found that these heuristics are not directly
+addressed by current systems and offered up several questions for
+discussion going forward.
+
