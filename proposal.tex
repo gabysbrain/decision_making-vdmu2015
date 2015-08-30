@@ -11,8 +11,8 @@ understanding and are considered to be more or less fixed across humans
 (barring exceptions like color-blindness). Furthermore, the testing
 methodologies for studies such as these are relatively mature with fixed
 objectives and protocols. However, what they can measure is limited but highly
-generalizable. Most studies done this way deal with preattentive processing
-\msnote{methodology matters - mcgrath} or
+generalizable. Most studies done this way deal with preattentive 
+processing~\citep{McGrath:1995} or
 very low-level tasks. Because of this, visualizations tested in this way must be
 boiled down to their raw elements and even adding small interactions can make
 getting useful results difficult.  Furthermore, it is not always clear exactly
@@ -20,10 +20,10 @@ how to apply the results of these studies in when designing visualization
 tools \tmnote{disagree} \msnote{why? example}. 
 Solving higher-level tasks, however, requires cognitive 
 skills that can be different among people and that require a different 
-methodology to study/analyse and support~\ttwwarning{ref}.
+methodology to study/analyse and support~\citep{Frensch:2005}.
 
 On the other hand, design studies are highly focused on a particular
-application scenario~\ttwwarning{ref}. While not as generalizable, the end goal of a design
+application scenario~\citep{Sedlmair:2012}. While not as generalizable, the end goal of a design
 study is a tool that is designed to be used in a real-world application
 scenario. In addition to selecting proper visual encodings that are
 perceptually accurate, the integration of multiple views as well as
@@ -38,15 +38,16 @@ many, many variables and any effect seen as a result of a focused lab study
 (for example) could be attributed to any combination of these changes.
 Therefore, while some of the knowledge gained in designing these tools is
 \emph{transferable} to other visualization tools, the results are often not
-\emph{generalizable} to the larger populace~\ttwwarning{ref}. \msnote{we hypothesize?} 
+\emph{generalizable} to the larger populace~\ttwwarning{ref from Michael}.
+\msnote{we hypothesize?} 
 Part of this is because different
-users have different problem solving strategies. (point out shortcomings of
-Gestalt theory?)
+users have different problem solving strategies. 
+\ttwnote{point out shortcomings of Gestalt theory?}
 
 There is still a large gap in research between the results from perceptual
 studies and design studies. Some researchers have attempted to bridge this gap
-with task taxonomies~\ttwwarning{cite Bremer and another one} or 
-models~\ttwwarning{cite Keim and another}. These are largely focused on 
+with task taxonomies~\citep{Brehmer:2013,Shneiderman:1996} or 
+models~\citep{Meyer:2012,Sacha:2014}. These are largely focused on 
 ``what'' users are doing though and not
 ``why'' they are doing it (even Bremer) 
 \tmnote{call out bremer}\msnote{is this all that's missing?}. What is
@@ -80,7 +81,7 @@ variable) \tmnote{unclear}.
 %have been possible.
 
 The visualization community has already started examining personality types and
-how those correspond to visualizations~\ttwwarning{ref}. While this does make the visualization
+how those correspond to visualizations~\citep{Conati:2014}. While this does make the visualization
 choice more ``personal'', personality types are designed to be
 consistent over time and therefore cannot account for the case where the same
 user will use different problem solving strategies depending on the
@@ -92,7 +93,7 @@ given state and a desired goal state by means of behavioral and/or cognitive,
 multi-step activities''~\citep{Frensch:2005}. Within this framework\msnote{???} is insight
 which has been defined in many ways but all definitions are remarkably similar
 to the definition from Mayer for learning which is ``information aquisition''
-and ``knowledge construction''~\ttwerror{ref}. Even with these definitions though
+and ``knowledge construction''~\citep{Mayer:2009}. Even with these definitions though
 there is still the question of how to measure insights in a visualization
 system. We feel that the methods from e-learning research can be used to
 measure the aquisition of insights \tmnote{sharpen}.
@@ -102,15 +103,15 @@ with a model behind it, in the first place is for making actionable decisions
 \tmnote{model behind it?}. To this end, we should look at the work that
 researchers have done on decision making where they have various heuristics how
 people go about making decisions. Here, decisions are defined as making a
-selection for a ``best'' candidate from a set of possible options (need to
-double check the exact definition) \tmnote{rewrite}.
+selection for a ``best'' candidate from a set of possible options 
+\ttwnote{need to double check the exact definition} \tmnote{rewrite}.
 
 In this proposal we begin the overall examination of this process and its
 relevance and benefits to visualization research by first looking into the
 decision making heuristics but later we plan to examine the entire model.  As a
 first step, we examine how decision making strategies relate to the usefulness
 in visualization\tmnote{huh?} and implications for design of visualization
-tools.  And, as a result of this proposal we would like to introduce the
+tools.  We would like to introduce the
 following questions for discussion: is visualization already doing this, what
 types of decision making strategies have been supported, the common decision
 making strategies in visualization systems, and should we be steering users to
@@ -126,7 +127,7 @@ has multiple attributes (objectives). These objectives are competing with
 each other in the sense that there is no clear optimal choice. What is also
 important about the heuristics is that depending on how information is 
 presented to participants different decisions heuristics will be employed
-and different optimal selections will be made~\ttwerror{ref}.
+and different optimal selections will be made~\citep{Jarvenpaa:1990}.
 
 \begin{table*}[tb]
   \begin{center}
@@ -135,18 +136,24 @@ and different optimal selections will be made~\ttwerror{ref}.
   \end{center}
 \end{table*}
 
-To see if users indeed use different strategies we coded the 21 papers
-from the visual parameter space analysis paper \citep{Sedlmair:2014}
-with the decision heuristic types above (or none). We found that 6/8 of
-the papers described some sort of heuristic when describing the task
-analysis, user characterization, or case study.
+To see if users indeed use different strategies we coded the 21 papers from the
+visual parameter space analysis paper \citep{Sedlmair:2014} with the decision
+heuristic types above (or none). We found that $15/21$ of the papers described
+some sort of heuristic when describing the task analysis, user
+characterization, or case study.
+Lexicographic and elimination by aspects are the most popular heuristics
+by far. Both of these concentrate on one parameter at a time and are
+about filtering alternatives. 
+
+The following heuristics are all described in \emph{The adaptive decision
+maker}~\citep{Payne:1993}.
 
 %\subsection{Experts in expert %situations}
 %\label{experts-in-expert-situations}
 
 \subsection{Weighted additive rule}\label{weighted-additive-rule}
 
-The weighted additive rule, proposed by \ttwnote{who?}, considers all
+The weighted additive rule considers all
 attributes of the various choices at once and directly considers 
 the weights. The user selects weights for the various attributes and 
 the option with the heighest weighted sum of attributes.
@@ -167,7 +174,7 @@ Rather than considering all attributes at once the user can instead simply
 order the selections by the most important attribute to them. Ties within this
 attribute are broken by sorting by the second most important attribute and so
 on until a clear candidate appears at the top. This process as been named
-lexicographic~\ttwerror{ref} by the decision making community.
+lexicographic by the decision making community.
 
 In this visualization literature, this is a realatively common strategy.
 Many visualization systems, for example, Tuner~\cite{Torsney-Weir:2011} and
@@ -183,14 +190,14 @@ reduction.
 Rather than filtering in order to find the optimal decision, one could
 also set thresholds and filter out the unacceptable decisions. This process
 is repeated until a final choice remains. This process is called
-the majority of confirming dimensions~\ttwerror{ref} strategy. 
+the majority of confirming dimensions strategy. 
 
 This heuristic is frequently employed in many visualization systems with
 perhaps the system developed by Spence et al.~\citep{Spence:1995} being a
 direct application of this heuristic. The user can interactively filter
 objective (output) dimensions into acceptable and unacceptable regions and
 see that effect on the selections in the parameter space. 
-Vismon~\ttwerror{ref} also uses a similar strategy.
+Vismon~\citep{Booshehrian:2012} also uses a similar strategy.
 
 \subsection{Frequency of good/bad
 features}\label{frequency-of-goodbad-features}
@@ -200,7 +207,7 @@ each attribute a good and bad level then one could label each attribute
 of each decision option by this. Then one could simply count the number of
 attributes that are labeled "good" and compare this against the number of
 "bad" labels and select the option with the highest difference. This has
-been called the frequency of good and bad features~\ttwerror{ref}.
+been called the frequency of good and bad features.
 
 This strategy is never directly addressed by the visualization community
 but the closest example we could find was the work by 
@@ -210,7 +217,7 @@ the user is looking for \ttwnote{clean up}.
 
 \subsection{Satisficing}\label{satisficing}
 
-Satisficing~\ttwerror{ref} does not consider the entire set of decision options
+Satisficing does not consider the entire set of decision options
 holistically. Rather, when employing this strategy, one considers each 
 option one at a time. Whether all attributes of the choice are considered or
 just a few depends on the person but either way the first acceptable option
@@ -253,7 +260,7 @@ visualization literature but just in a different name? From the literature
 search we conducted the answer is no. There are elements of task support for
 these heuristics, like filtering, but a comprehensive strategy is never
 identified. Visualization systems are often designed around 
-"overview first, zoom and filter, details on demand"~\cite{Shneiderman} or
+"overview first, zoom and filter, details on demand"~\cite{Shneiderman:1996} or
 a "global to local" search strategy~\cite{Sedlmair:2014}. These may help to
 address the more global heuristics like weighted additive or lexicographic.
 However, this is at odds with the more comparative heuristics like majority
@@ -264,19 +271,11 @@ So far, this does seem quite useful. For example, the local to global
 strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
 easily suffer from the limitations of satisficing.
 
-
-\subsection{What types of users are there?}
-\label{what-types-of-users-are-there}
-
-Lexicographic and elimination by aspects are the most popular heuristics
-by far. Both of these concentrate on one parameter at a time and are
-about filtering alternatives.
-
 \subsection{Should we be steering users to certain decision-making strategies?}
 
 We see this as an open question. Visualization concentrates on information
-presentation. There is evidence that the presentation of information
-will influence which decision making strategy one employs~\ttwerror{ref}.
+presentation. There is evidence that the presentation of information will
+influence which decision making strategy one employs~\citep{Jarvenpaa:1990}.
 On the other hand, in real-world decision making there is often no clear
 optimal decision to be made so it is difficult to evaluate which decision
 making heuristic is best. However, it seems that it is best to at least
