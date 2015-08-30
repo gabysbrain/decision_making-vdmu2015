@@ -1,11 +1,14 @@
+\tmnote{abstract is blank?}
+\tmnote{Title is weird: ``in the visualization''?}
 
 Most prominent forms of evaluation of uncertainty visualization systems 
 are through one of two distinct fronts.
 On one side are empirical studies while on the other side are design studies.
+\tmnote{just about all the vis research is empirical. design studies are empirical? you are mixing sth here?}
 The designs of uncertainty visualizations must not only take into account 
 perceptual accuracy of the visualization but also how that uncertainty will
 be interpreted and how that interpretation will affect decisions made based
-on the chosen representation. In this proposal,
+on the chosen representation. \tmnote{if that is the statement, you can start this with that most work on uncertainty vis has focused on the perceptual aspects. however, we don't know how it actually figures in in solving tasks (which is traditionally design study land).} In this proposal,
 we argue that a more holistic approach to evaluation and design is required
 by evaluating users based on and incorporating decision making heuristics
 while designing visualization systems.
@@ -43,7 +46,7 @@ designing one of these tools one must also carefully consider what tasks the
 intended users want to accomplish as well as how they will employ these tasks
 to complete their analysis goal. However, the feedback in design studies is
 necessarily qualitative and limited. A new visualization tool involves changing
-many, many variables and any effect seen as a result of a focused lab study
+many variables and any effect seen as a result of a focused lab study
 (for example) could be attributed to any combination of these changes.
 Therefore, while some of the knowledge gained in designing these tools is
 \emph{transferable} to other visualization tools, the results are often not
@@ -55,14 +58,14 @@ users have different problem solving strategies.
 There is still a large gap in research between the results from perceptual
 studies and design studies. Some researchers have attempted to bridge this gap
 with task taxonomies~\citep{Brehmer:2013,Shneiderman:1996} or 
-models~\citep{Meyer:2012,Sacha:2014}. These are largely focused on 
-``what'' users are doing though and not
+models~\citep{Meyer:2012,Sacha:2014}. \tmnote{unclear how meyer and sacha address this gap!? I would find it more appropiate to cite Tory+Moeller's 2004 paper since they introduced the idea of the mental model of the user for the first time afaik} These are largely focused on 
+``what'' users are doing and not
 ``why'' they are doing it. Brehmer et al.\ do list ``why'' tasks but 
 \ttwnote{need to read bremer again to compare but their why tasks are somewhat vague...}.
 With the addition of
 a better modeling of the user from cognitive principles, namely,
 what is the overall problem solving process of the user in terms of solving the
-problem of extracting information from data? By making user modeling more
+problem of extracting information from data? \tmnote{prev. not a sentence} By making user modeling more
 explicit we could shorten the number of iterations for design studies since we
 would have a better understanding beforehand what visual encodings and
 interactions will help the user accomplish their goal beyond perceptual
@@ -74,6 +77,7 @@ being able to run lab studies on much more complex visual encodings and
 interactions and reason about the results better (and is another independent
 variable) \tmnote{unclear}
 \ttwnote{this also seems obvious to me, not sure how to clean up}.
+\tmnote{unclear why it will be better?! better as in more 'accurate' or 'faster' or 'prettier' or 'easier' for domain scientists to do themselves or ...}
 
 %For example, we ran a lab study with two different interfaces in order
 %to test if a simple visual encoding of the sensitivity of a parameter to
@@ -99,7 +103,7 @@ to be consistent over time and therefore cannot account for the case where the
 same user will use different problem solving strategies depending on the task.
 We argue for a more situation-based approach to modelling a user interacting
 with a visualization tool. We propose to look at the entire visual exploration
-process as a case of solving a complex problem. Complex problem solving can be
+process as a case of solving a complex problem. Complex problem solving (CPS) can be
 defined as: ``CPS occurs to overcome barriers between a given state and a
 desired goal state by means of behavioral and/or cognitive, multi-step
 activities''~\citep{Frensch:2005}. One of the major goals of a visualization
@@ -111,7 +115,7 @@ still the question of how to measure insights in a visualization system. We
 feel that the methods from e-learning research can be used to measure the
 aquisition of insights \tmnote{sharpen} 
 \ttwnote{maybe drop the whole 2nd half of this para and just reference it 
-really quick in the talk}.
+really quick in the talk}. \tmnote{yes, but you need to explain what you mean with 'situation based approach'!}
 
 Similarly, one of the reasons for visualizing the uncertainty of a simulation
 model in the first place is for making actionable decisions. With these
@@ -119,23 +123,25 @@ decisions one often has a set of choices with multiple competing objectives.
 The work done by researchers in decision theory specifically addresses the
 methods by which people make contingent decisions in which, all alternative
 action possibilities, events that relate actions to outcomes, and the objective
-values are all available to the decision maker~\citep{Payne:1993}.  We should
+values are all available to the decision maker~\citep{Payne:1993}.  \tmnote{the next sentence doesn't bring anything to the table, delete:We should
 look into this work that researchers have done on decision making where they
-have various heuristics how people go about making decisions. 
+have various heuristics how people go about making decisions. }
 
-In this proposal we begin the overall examination of this process and its
+In this proposal we begin the overall examination of this process \tmnote{what is 'this process' referring to?} and its
 relevance and benefits to visualization research by first looking into the
-decision making heuristics but later we plan to examine the entire model.  As a
+decision making heuristics but later we plan to examine the entire model.  \tmnote{'entire model' of what?} As a
 first step, we examine how current visualization systems employ the 
 various decision making strategies
 and implications for design of visualization
 tools.  We would like to introduce the
-following questions for discussion: is visualization already doing this, what
-types of decision making strategies have been supported, the common decision
-making strategies in visualization systems, and should we be steering users to
+following questions for discussion: \tmnote{not a good question, delete:} is visualization already doing this, what
+types of decision making strategies have been supported \tmnote{... in the vis community/ in vis tools}, the common decision
+making strategies in visualization systems \tmnote{not a question}, and should \tmnote{not 'should we steer' more 'how to support'?} we be steering users to
 certain decision making strategies.
 The goal of these questions is to discuss how incorporating decision making
 heuristics will improve the development and evaluation of visualization tools.
+
+\tmnote{you really have to cut down on motivation, can't be more than 2 pages text, a 3rd page for refs ok}
 
 \section{Heuristics}\label{heuristics}
 
@@ -146,12 +152,12 @@ each other in the sense that there is no clear optimal choice. What is also
 important about the heuristics is that depending on how information is 
 presented to participants different decisions heuristics will be employed
 and different optimal selections will be made~\citep{Jarvenpaa:1990}.
-The following heuristics are all described in \emph{The adaptive decision
+The following heuristics \tmnote{need a proper reference to the table} are all described in \emph{The adaptive decision
 maker}~\citep{Payne:1993}.
 
 \begin{table*}[tb]
   \begin{center}
-    \caption{Decision types}
+    \caption{Decision types \tmnote{pretty up}}
     \inputfile{paper_codes}
   \end{center}
 \end{table*}
@@ -173,7 +179,7 @@ about filtering alternatives.
 The weighted additive rule considers all
 attributes of the various choices at once and directly considers 
 the weights. The user selects weights for the various attributes and 
-the option with the heighest weighted sum of attributes.
+the option with the highest weighted sum of attributes.
 A version of this strategy considers all attributes evenly but still
 the selection is made based on the total weighted value.
 
@@ -183,7 +189,7 @@ design studies this rule is not directly supported. We considered that
 systems supporting the evaluation of distance functions such as 
 in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
 LineUp~\citep{Gratzl:2013} is the only system as far as we know that
-directly supports the evaluation of numerical weights on objectives.
+directly supports the evaluation of numerical weights on objectives. \tmnote{But Tuner does too.}
 
 \subsection{Lexicographic}\label{lexicographic}
 
@@ -193,21 +199,21 @@ attribute are broken by sorting by the second most important attribute and so
 on until a clear candidate appears at the top. This process as been named
 lexicographic by the decision making community.
 
-In this visualization literature, this is a realatively common strategy.
+Among our 21 reviewed papers, this is a relatively common strategy.
 Many visualization systems, for example, Tuner~\cite{Torsney-Weir:2011} and
 Luboschick et al.~\citep{Luboschik:2014} allow the user to prioritize a few
 objective measures and evaluate the outputs based on those few. Naturally,
 when presented with more attributes than can be easily compared between
-one of the standard visualization responses to this issue is to filter
+one can filter
 these attributes down to just the core set. This is a form of dimension 
-reduction.
+reduction (filtering).
 
 \subsection{Elimination by aspects}\label{elimination-by-aspects}
 
 Rather than filtering in order to find the optimal decision, one could
-also set thresholds and filter out the unacceptable decisions. This process
+also set thresholds and filter out the unacceptable decisions. \tmnote{rather than filtering ... filtering?!?!} This process
 is repeated until a final choice remains. This process is called
-the majority of confirming dimensions strategy. 
+the majority of confirming dimensions strategy. \tmnote{huh? its called elimination by aspects!?}
 
 This heuristic is frequently employed in many visualization systems with
 perhaps the system developed by Spence et al.~\citep{Spence:1995} being a
@@ -239,7 +245,7 @@ Satisficing does not consider the entire set of decision options holistically.
 Rather, when employing this strategy, one considers each option one at a time.
 Whether all attributes of the choice are considered or just a few depends on
 the person but either way the first acceptable option encountered is selected.
-We did not see any evidence in the visualization of this strategy being
+We did not see any evidence in the visualization \tmnote{Why do you keep saying 'in the visualization'???  this is not proper english?!} of this strategy being
 employed. In some ways it is at odds with visualization tool development.
 Usually, one assumes that all data must be examined or all data is known
 up-front.
@@ -262,7 +268,7 @@ order that the options are considered one may get a very different outcome. In
 Fluid Explorer~\cite{Bruckner:2010} and Paramorama~\citep{Pretorius:2011} this
 is done by the user manually selecting an optimal candidate simulation from 
 a list of simulation outputs.
-\ttwnote{Eric Brochu's work is probably the best example}
+\ttwnote{Eric Brochu's work is probably the best example} \tmnote{yes and no, it is an active learning approach / feature, but I do not get to see all comparisons, just the ones the algorithm needs me to look at.}
 
 
 \section{Questions}\label{questions}
@@ -286,6 +292,9 @@ So far, this does seem quite useful. For example, the local to global
 strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
 easily suffer from the limitations of satisficing.
 
+\tmnote{Needs some thought. I don't think it is good to ask whether the vis communicity is already doing this. Rather, how can the current approaches of task taxonomies and mantras be reconciled with work in the problem solving / decision making world. What are the similarities, what are the differences?}
+
+
 \subsection{Should we be steering users to certain decision-making strategies?}
 
 We see this as an open question. Visualization concentrates on information
@@ -296,12 +305,17 @@ optimal decision to be made so it is difficult to evaluate which decision
 making heuristic is best. However, it seems that it is best to at least
 comprehensively examine all the options.
 
+\tmnote{again, I would rephrase towards 'how can we support *different* decision making / problem solving strategies'?}
+
+
 \subsection{Common decisions in vis systems}
 \label{common-decisions-in-vis-systems}
 
-Based on our literature survey we found certaint areas of parameter space
+Based on our literature survey we found certain areas of parameter space
 exploration where a decision is being made.  For example, is the sampling
 sufficient, what model to select, and what parameter settings are good?
+
+\tmnote{this section is unclear to me.}
 
 \subsection{Weighted parameter lists are
 missing}\label{weighted-parameter-lists-are-missing}
@@ -314,6 +328,8 @@ tools we examined. As far as we know, there is only one tool published,
 LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
 effect of manipulating weights.
 
+\tmnote{confusing -- is paraglide now the only tool or not?}
+
 It's not very clear why this is not so common perhaps just momentum? Is
 this hidden in other visualization systems under the monkier of
 ``distance metric''? Also, weighting objectives is a relatively
@@ -321,10 +337,12 @@ numerical process and perhaps this is simply done without visualization
 support where, for example, numerical optimization would be very
 effective?
 
+\tmnote{the ValueCharts paper did this. Further, I do believe it is part of some systems, but I couldn't point you to them now.}
+
 \section{Conclusion}
 
 We have proposed a task-centered idea of evaluating the decisions users
-make while evaluating uncertainty. We have enumerated some common decision
+make while evaluating uncertainty. \tmnote{rephrase, perhaps: we are proposing to study more closely the impact that uncertainty information has on decisions and the implications for visual tool design. or sth like that.} We have enumerated some common decision
 making heuristics and evaluated if these are currently addressed by 
 visualization systems today. We found that these heuristics are not directly
 addressed by current systems and offered up several questions for
