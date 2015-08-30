@@ -1,11 +1,19 @@
 
-Empirical visualization research is roughly divided into two distinct fronts.
-\msnote{"most prominent"}
-On one side are lab studies while on the other side are design studies.
-\tmnote{"Vis research" is a bit big here. there is lots more (like technique
-papers, etc.)}
-\msnote{and field studies? what else?}
+Most prominent forms of evaluation of uncertainty visualization systems 
+are through one of two distinct fronts.
+On one side are empirical studies while on the other side are design studies.
+The designs of uncertainty visualizations must not only take into account 
+perceptual accuracy of the visualization but also how that uncertainty will
+be interpreted and how that interpretation will affect decisions made based
+on the chosen representation. In this proposal,
+we argue that a more holistic approach to evaluation and design is required
+by evaluating users based on and incorporating decision making heuristics
+while designing visualization systems.
+%\tmnote{"Vis research" is a bit big here. there is lots more (like technique
+%papers, etc.)}
+%\msnote{and field studies? what else?}
 
+\ttwnote{probably want to cut down on the user and design study paras}
 Lab studies concentrate mostly on perceptual aspects which are low-level visual
 understanding and are considered to be more or less fixed across humans
 (barring exceptions like color-blindness). Furthermore, the testing
@@ -15,9 +23,10 @@ generalizable. Most studies done this way deal with preattentive
 processing~\citep{McGrath:1995} or
 very low-level tasks. Because of this, visualizations tested in this way must be
 boiled down to their raw elements and even adding small interactions can make
-getting useful results difficult.  Furthermore, it is not always clear exactly
-how to apply the results of these studies in when designing visualization
-tools \tmnote{disagree} \msnote{why? example}. 
+getting useful results difficult.  
+%Furthermore, it is not always clear exactly how to apply the results of 
+% these studies in when designing visualization 
+%tools \tmnote{disagree} \msnote{why? example}. 
 Solving higher-level tasks, however, requires cognitive 
 skills that can be different among people and that require a different 
 methodology to study/analyse and support~\citep{Frensch:2005}.
@@ -39,8 +48,7 @@ many, many variables and any effect seen as a result of a focused lab study
 Therefore, while some of the knowledge gained in designing these tools is
 \emph{transferable} to other visualization tools, the results are often not
 \emph{generalizable} to the larger populace~\ttwwarning{ref from Michael}.
-\msnote{we hypothesize?} 
-Part of this is because different
+We hypothesize that this is because different
 users have different problem solving strategies. 
 \ttwnote{point out shortcomings of Gestalt theory?}
 
@@ -49,19 +57,23 @@ studies and design studies. Some researchers have attempted to bridge this gap
 with task taxonomies~\citep{Brehmer:2013,Shneiderman:1996} or 
 models~\citep{Meyer:2012,Sacha:2014}. These are largely focused on 
 ``what'' users are doing though and not
-``why'' they are doing it (even Bremer) 
-\tmnote{call out bremer}\msnote{is this all that's missing?}. What is
-missing is a better modeling of the user from cognitive principles, namely,
+``why'' they are doing it. Brehmer et al.\ do list ``why'' tasks but 
+\ttwnote{need to read bremer again to compare but their why tasks are somewhat vague...}.
+With the addition of
+a better modeling of the user from cognitive principles, namely,
 what is the overall problem solving process of the user in terms of solving the
 problem of extracting information from data? By making user modeling more
 explicit we could shorten the number of iterations for design studies since we
 would have a better understanding beforehand what visual encodings and
 interactions will help the user accomplish their goal beyond perceptual
-understanding \msnote{vague...}. In addition, better user modeling will reduce the number of
+understanding \msnote{vague...}
+\ttwnote{not sure why vague, this seems really obvious to me}. 
+In addition, better user modeling will reduce the number of
 ``unknown independent variables'' when conducting a user study and will lead to
 being able to run lab studies on much more complex visual encodings and
 interactions and reason about the results better (and is another independent
-variable) \tmnote{unclear}.
+variable) \tmnote{unclear}
+\ttwnote{this also seems obvious to me, not sure how to clean up}.
 
 %For example, we ran a lab study with two different interfaces in order
 %to test if a simple visual encoding of the sensitivity of a parameter to
@@ -81,43 +93,49 @@ variable) \tmnote{unclear}.
 %have been possible.
 
 The visualization community has already started examining personality types and
-how those correspond to visualizations~\citep{Conati:2014}. While this does make the visualization
-choice more ``personal'', personality types are designed to be
-consistent over time and therefore cannot account for the case where the same
-user will use different problem solving strategies depending on the
-task. We argue for a more situation-based approach to modelling a
-user interacting with a visualization tool. We propose to look at the entire
-visual exploration process as a case of solving a complex problem. Complex
-problem solving can be defined as: ``CPS occurs to overcome barriers between a
-given state and a desired goal state by means of behavioral and/or cognitive,
-multi-step activities''~\citep{Frensch:2005}. Within this framework\msnote{???} is insight
-which has been defined in many ways but all definitions are remarkably similar
-to the definition from Mayer for learning which is ``information aquisition''
-and ``knowledge construction''~\citep{Mayer:2009}. Even with these definitions though
-there is still the question of how to measure insights in a visualization
-system. We feel that the methods from e-learning research can be used to
-measure the aquisition of insights \tmnote{sharpen}.
+how those correspond to visualizations~\citep{Conati:2014}. While this does
+make the visualization choice more ``personal'', personality types are designed
+to be consistent over time and therefore cannot account for the case where the
+same user will use different problem solving strategies depending on the task.
+We argue for a more situation-based approach to modelling a user interacting
+with a visualization tool. We propose to look at the entire visual exploration
+process as a case of solving a complex problem. Complex problem solving can be
+defined as: ``CPS occurs to overcome barriers between a given state and a
+desired goal state by means of behavioral and/or cognitive, multi-step
+activities''~\citep{Frensch:2005}. One of the major goals of a visualization
+system is insight which has been defined~\citep{Yi:2008a} in many ways but all
+definitions are remarkably similar to the definition from Mayer for learning
+which is ``information aquisition'' and ``knowledge
+construction''~\citep{Mayer:2009}. Even with these definitions though there is
+still the question of how to measure insights in a visualization system. We
+feel that the methods from e-learning research can be used to measure the
+aquisition of insights \tmnote{sharpen} 
+\ttwnote{maybe drop the whole 2nd half of this para and just reference it 
+really quick in the talk}.
 
-Similarly, one of the reasons for using a visualization system, especialy one
-with a model behind it, in the first place is for making actionable decisions
-\tmnote{model behind it?}. To this end, we should look at the work that
-researchers have done on decision making where they have various heuristics how
-people go about making decisions. Here, decisions are defined as making a
-selection for a ``best'' candidate from a set of possible options 
-\ttwnote{need to double check the exact definition} \tmnote{rewrite}.
+Similarly, one of the reasons for visualizing the uncertainty of a simulation
+model in the first place is for making actionable decisions. With these
+decisions one often has a set of choices with multiple competing objectives.
+The work done by researchers in decision theory specifically addresses the
+methods by which people make contingent decisions in which, all alternative
+action possibilities, events that relate actions to outcomes, and the objective
+values are all available to the decision maker~\citep{Payne:1993}.  We should
+look into this work that researchers have done on decision making where they
+have various heuristics how people go about making decisions. 
 
 In this proposal we begin the overall examination of this process and its
 relevance and benefits to visualization research by first looking into the
 decision making heuristics but later we plan to examine the entire model.  As a
-first step, we examine how decision making strategies relate to the usefulness
-in visualization\tmnote{huh?} and implications for design of visualization
+first step, we examine how current visualization systems employ the 
+various decision making strategies
+and implications for design of visualization
 tools.  We would like to introduce the
 following questions for discussion: is visualization already doing this, what
 types of decision making strategies have been supported, the common decision
 making strategies in visualization systems, and should we be steering users to
 certain decision making strategies.
-
-\tmnote{will it improve vis tools and the (visual) design (study) process?}
+The goal of these questions is to discuss how incorporating decision making
+heuristics will improve the development and evaluation of visualization tools.
 
 \section{Heuristics}\label{heuristics}
 
@@ -128,6 +146,8 @@ each other in the sense that there is no clear optimal choice. What is also
 important about the heuristics is that depending on how information is 
 presented to participants different decisions heuristics will be employed
 and different optimal selections will be made~\citep{Jarvenpaa:1990}.
+The following heuristics are all described in \emph{The adaptive decision
+maker}~\citep{Payne:1993}.
 
 \begin{table*}[tb]
   \begin{center}
@@ -144,9 +164,6 @@ characterization, or case study.
 Lexicographic and elimination by aspects are the most popular heuristics
 by far. Both of these concentrate on one parameter at a time and are
 about filtering alternatives. 
-
-The following heuristics are all described in \emph{The adaptive decision
-maker}~\citep{Payne:1993}.
 
 %\subsection{Experts in expert %situations}
 %\label{experts-in-expert-situations}
@@ -199,8 +216,8 @@ objective (output) dimensions into acceptable and unacceptable regions and
 see that effect on the selections in the parameter space. 
 Vismon~\citep{Booshehrian:2012} also uses a similar strategy.
 
-\subsection{Frequency of good/bad
-features}\label{frequency-of-goodbad-features}
+\subsection{Frequency of good/bad features}
+\label{frequency-of-goodbad-features}
 
 If, like in the elimination by aspects strategy, one can articulate for
 each attribute a good and bad level then one could label each attribute
@@ -213,23 +230,23 @@ This strategy is never directly addressed by the visualization community
 but the closest example we could find was the work by 
 Coffey et al.~\citep{Coffey:2013}. In their system the user could browse
 through simulations and find similar ones which may be closer to what
-the user is looking for \ttwnote{clean up}.
+the user is looking for. The frequency of good and bad features between the
+choices of needle design determined the final needle design decision.
 
 \subsection{Satisficing}\label{satisficing}
 
-Satisficing does not consider the entire set of decision options
-holistically. Rather, when employing this strategy, one considers each 
-option one at a time. Whether all attributes of the choice are considered or
-just a few depends on the person but either way the first acceptable option
-encountered is selected.
-
+Satisficing does not consider the entire set of decision options holistically.
+Rather, when employing this strategy, one considers each option one at a time.
+Whether all attributes of the choice are considered or just a few depends on
+the person but either way the first acceptable option encountered is selected.
 We did not see any evidence in the visualization of this strategy being
 employed. In some ways it is at odds with visualization tool development.
-Usually, one assumes that all data must be examined. Selecting the number
-of samples to take from a simulation, however, may suffer from this since
-the choice of if sufficient samples have been taken is never evaluated
-in systems such as Tuner~\citep{Torsney-Weir:2011} or 
-Paramorama~\citep{Pretorius:2011}. \ttwnote{maybe delete this...}
+Usually, one assumes that all data must be examined or all data is known
+up-front.
+%Selecting the number of samples to take from a simulation, however, may suffer
+%from this since the choice of if sufficient samples have been taken is never
+%evaluated in systems such as Tuner~\citep{Torsney-Weir:2011} or
+%Paramorama~\citep{Pretorius:2011}. \ttwnote{maybe delete this...}
 
 \subsection{Majority of confirming
 dimensions}\label{majority-of-confirming-dimensions}
@@ -252,7 +269,7 @@ a list of simulation outputs.
 
 During the workshop we would like to address a number of questions.
 
-\subsection{Is vis already doing this?}
+\subsection{Is the visualization community already doing this?}
 \label{is-vis-already-doing-this}
 
 One question is do these problem solving heuristics exist already in the
@@ -265,8 +282,6 @@ a "global to local" search strategy~\cite{Sedlmair:2014}. These may help to
 address the more global heuristics like weighted additive or lexicographic.
 However, this is at odds with the more comparative heuristics like majority
 of confirming dimensions. \ttwnote{more?}
-
-By addressing these heuristics more directly we could \ttwwarning{What?}
 So far, this does seem quite useful. For example, the local to global
 strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
 easily suffer from the limitations of satisficing.
