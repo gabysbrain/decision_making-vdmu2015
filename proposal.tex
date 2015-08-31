@@ -39,7 +39,7 @@ by providing a better framework for problem and task characterization.
 
 In this position paper, we seek to conduct some first steps towards such a more
 sophisticated understanding of the role of users in (uncertainty)
-visualization. Toward this gaol, we make the following contributions:
+visualization. Toward this goal, we make the following contributions:
 \begin{itemize} 
 \item We introduce 6 different decision making strategies from
       the decision theory literature~\citep{Payne:1993}.
@@ -274,6 +274,7 @@ LineUp~\citep{Gratzl:2013} is the only system as far as we know that
 directly supports the evaluation of numerical weights on objectives. 
 \tmnote{But Tuner does too.}
 \ttwnote{not really, how?}
+\tmnote{the 'parameters' considered in the med image segmentation example are actual weights of an energy function. So, we are manipulating weights.}
 
 \subsection{Strategy 2: Lexicographic}\label{lexicographic}
 
@@ -290,11 +291,11 @@ objective measures and evaluate the outputs based on those few. Naturally,
 when presented with more attributes than can be easily compared between
 one can filter
 these attributes down to just the core set. This is a form of dimension 
-reduction (filtering).
+reduction (dimensional filtering).
 
 \subsection{Strategy 3: Elimination by aspects}\label{elimination-by-aspects}
 
-Rather than concentrating on finding the optimal decision, one could
+Rather than concentrating on finding the optimal options, one could
 instead set thresholds and filter out the unacceptable decisions. This process
 is repeated until a final choice remains. This process is called
 elimination by aspects.
@@ -375,6 +376,7 @@ tools we examined. As far as we know, there is only one tool published,
 LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
 effect of manipulating weights.
 \ttwnote{what else...}
+\tmnote{ValueCharts (a precursor to LineUp)}
 
 %It's not very clear why this is not so common perhaps just momentum? Is
 %this hidden in other visualization systems under the monkier of
@@ -395,7 +397,7 @@ effect of manipulating weights.
 %identified. 
 
 Visualization systems are often designed around "overview first, zoom and
-filter, details on demand"~\cite{Shneiderman:1996}, a "global to local,"
+filter, details on demand"~\cite{Shneiderman:1996}, as well as a "global to local,"
 or "local to global" search strategy~\cite{Sedlmair:2014}. Both task 
 taxonomies and decision making heuristics are developed around how users
 go about solving tasks.
@@ -404,8 +406,7 @@ are focused on the engineering aspects of the tools in terms of what
 features are required, for example, filtering or zooming. The decision
 making heuristics are more focused on how these tasks can be combined to
 solve a problem.
-With better understanding of the decision making process a user will go
-about one could better decide which tasks to prioritize for which users.
+With better understanding of the decision making process used one could better decide which tasks to prioritize for which users.
 We propose that linking these task taxonomies with the different problem 
 solving heuristics in terms of which heuristics are supported by which 
 tasks will allow for more robust decisions about which tasks, and by
@@ -428,7 +429,7 @@ tool.
 \subsection{How can we better support \emph{different} decision making strategies?}
 
 Visualization concentrates on information
-presentation. There is evidence that the presentation of information will
+presentation. \tmnote{this last sentence I see contested. Perhaps this is better: ``A major design decision for a visualization tool is a proper visual encoding.''} There is evidence that the presentation of information (visual encoding) will
 influence which decision making strategy one employs~\citep{Jarvenpaa:1990}.
 On the other hand, in real-world decision making there is often no clear
 optimal decision to be made so it is difficult to evaluate which decision
