@@ -247,11 +247,11 @@ specific examples will be discussed below.
 \subsection{Strategy 1: Weighted additive rule}\label{weighted-additive-rule}
 
 The weighted additive rule considers all
-attributes of the various choices at once and directly considers 
-the weights. The user selects weights for the various attributes and 
+attributes of the various choices at once.
+Weights are assigned for the various attributes and 
 the option with the highest weighted sum of attributes.
-A version of this strategy considers all attributes evenly but still
-the selection is made based on the total weighted value.
+A version of this strategy considers all attributes evenly but 
+the selection is still made on the total weighted value.
 
 Practical issues with this strategy include mapping attributes to numerical values
 and examining the effects of adjusting the weights. In our evaluation of
@@ -286,7 +286,7 @@ Rather than considering all attributes at once the user can instead simply
 order the selections by the most important attribute to them. Ties within this
 attribute are broken by sorting by the second most important attribute and so
 on until a clear candidate appears at the top. This process has been named
-lexicographic by the decision making community.
+lexicographic.
 
 Among our 21 reviewed papers, this is a relatively common strategy.
 Many visualization systems, for example, Tuner~\cite{Torsney-Weir:2011} and
@@ -299,10 +299,10 @@ these attributes down to just the core set.
 
 \subsection{Strategy 3: Elimination by aspects}\label{elimination-by-aspects}
 
-Rather than concentrating on finding the optimal options, a user might
+In elimination by aspects,
+rather than concentrating on finding the optimal options, a user might
 instead set thresholds and filter out unacceptable decisions. This process
-is repeated until a final choice remains, and is called
-elimination by aspects.
+is repeated until a final choice remains.
 
 Elimination by aspects is frequently employed in many visualization systems, 
 such as in the system developed by Spence et al.~\citep{Spence:1995}. The user can interactively filter
@@ -391,7 +391,7 @@ ValueCharts~\citep{Carenini:2004}.
 %\tmnote{the ValueCharts paper did this. Further, I do believe it is part of some systems, but I couldn't point you to them now.}
 
 
-\subsection{How can current approaches of task taxonomies and mantras be reconciled under the lens of decision making?}
+\subsection{How can current approaches of task taxonomies be reconciled under the lens of decision making?}
 
 %One question is do these problem solving heuristics exist already in the
 %visualization literature but just in a different name? From the literature
