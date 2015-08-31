@@ -1,7 +1,8 @@
 \tmnote{abstract is blank?}
 
 The current literature on uncertainty visualization follows two main streams: perceptual studies and design studies.
-\emph{Perceptual studies} such as \ttwwarning{xxx} help us to better understand 
+\emph{Perceptual studies} such as MacEachren et al.~\citep{MacEachren:2012} 
+help us to better understand 
 how simple, low-level uncertainty tasks can be supported by visual encodings. 
 While the results of such studies can be seen as generalizable across a wide 
 range of humans, the approach is not accounting for higher-level aspects, such as cognitive skills,
@@ -12,17 +13,14 @@ In this qualitative approach, researchers work together with end users to better
 (ill-specified) data analysis tasks, and to create a visualization tool
 that supports these. In doing so, design studies provide us with instances of how
 actual problems were broken down into design decisions of actual tools, going far beyond
-low-level perceptual reasoning. These instance, however, are highly problem- and domain-specific.
+low-level perceptual reasoning. These instances, however, are highly problem- and domain-specific.
 Therefore, while some of the knowledge gained in designing these tools is
 ``transferable'' to other visualization tools, the results are often not
 ``generalizable'' to the larger populace.
 
 In this position paper, we argue that there is a gap between these two lines of work.
 While there are general task taxonomies~\citep{Brehmer:2013,Shneiderman:1996} and 
-models~\citep{Meyer:2012,Sacha:2014}
-%
-\msnote{agree, cite Tory as well (although I would not claim that you guys were the first ever to talk about mental models :-), you could also cite the TOI paper here, imho this is exactly what we try to do} 
-%
+models~\citep{Tory:2004,Sedlmair:2014}
 attempting to bridge the gap, we argue that a more systematic \emph{user modeling} is missing.
 The visualization community has already started examining personality types and
 how those correspond to visualizations~\citep{Conati:2014}. Beyond that, we advocate for a more thorough 
@@ -31,8 +29,10 @@ and the ultimate \emph{decision making} processes.
 While these terms are not new to the visualization community, the 
 literature from other domains such as Complex Problem Solving (CPS)~\citep{Frensch:2005}
 and Decision Theory~\citep{Payne:1993} suggests that there is much more to say about these characteristics,
-than what we currently discuss in our community. For instance, people are known to have different strategies to go about decision making,
-\msnote{list more ...}, and people are known to adapt strategies based on ... \msnote{extend and cite}.
+than what we currently discuss in our community. For instance, people are known to have different strategies to go about decision making, filtering information,
+and adapt strategies based on, among other things, the number of attributes 
+to consider, time pressure, and the mode of information 
+display~\cite{Payne:1993}.
 We deem a better understanding of such aspects specifically important for uncertainty visualization.
 Not only could they help to run better perceptual studies by directly accounting for user characteristic variables 
 (e.g., users following a certain strategy are ``better'' performing than others), but also support design study researchers
@@ -201,10 +201,11 @@ values are all available to the decision maker.
 All strategies assume that the decision maker (or user in our case)
 is selecting a decision item from a list of discrete choices. Each item
 has multiple attributes (objectives). These objectives are competing with
-each other in the sense that there is no clear optimal choice. What is also
-important about the strategies is that depending on how information is 
-presented to participants different decisions strategies will be employed
-and different optimal selections will be made~\citep{Jarvenpaa:1990}.
+each other in the sense that there is no clear optimal choice. 
+%What is also
+%important about the strategies is that depending on how information is 
+%presented to participants different decisions strategies will be employed
+%and different optimal selections will be made~\citep{Jarvenpaa:1990}.
 
 %All these heuristics assume that the decision maker (or user in this case)
 %is selecting a decision item from a list of discrete choices. Each item
@@ -230,9 +231,14 @@ specific examples will be discussed below.
 
 \begin{table}[tb]
   \begin{center}
-    \caption{We coded the 21 papers listed in 
+    \caption{We classified the 21 papers listed in 
              Sedlmair et al.~\citep{Sedlmair:2014} for which decision making
-             heuristics, if any, are employed.
+             heuristics, if any, are employed by the users of the tools
+             when describing the task analysis, user characterization,
+             or case study.  We could identify one of the decision making 
+             heuristics in $15/21$ of the papers. The lexicographic and 
+             elimination by aspects heuristics were the most commonly
+             employed.
     }
     \label{tbl:decision-types}
     \inputfile{paper_codes}
@@ -282,8 +288,8 @@ reduction (filtering).
 
 \subsection{Strategy 3: Elimination by aspects}\label{elimination-by-aspects}
 
-Rather than filtering in order to find the optimal decision, one could
-also set thresholds and filter out the unacceptable decisions. \tmnote{rather than filtering ... filtering?!?!}\ttwnote{rather than optimal ... unacceptable} This process
+Rather than concentrating on finding the optimal decision, one could
+instead set thresholds and filter out the unacceptable decisions. This process
 is repeated until a final choice remains. This process is called
 elimination by aspects.
 
@@ -342,15 +348,37 @@ is done by the user manually selecting an optimal candidate simulation from
 a list of simulation outputs.
 %\ttwnote{Eric Brochu's work is probably the best example} \tmnote{yes and no, it is an active learning approach / feature, but I do not get to see all comparisons, just the ones the algorithm needs me to look at.}
 
-\subsection{Summary}
-Lexicographic and elimination by aspects are the most popular heuristics
-by far. Both of these concentrate on one parameter at a time and are
-about filtering alternatives. \msnote{add a bit more in terms of summary here, if possible}
-
+%\subsection{Summary}
 
 \section{Questions}\label{questions}
 
 Based on this analysis, we would like to address a number of questions during the workshop.
+
+\subsection{What are common decision making strategies?}
+
+Lexicographic and elimination by aspects are the most popular heuristics
+by far. Both of these concentrate on one parameter at a time and are
+about filtering alternatives. \msnote{add a bit more in terms of summary here, if possible}
+
+Only one of the papers, ParaGlide~\citep{Bergner:2013}, concentrated on a
+weighted strategy. Furthermore, ParaGlide did this though computing and
+investigating a distance metric rather than directly adjusting the
+weights. We're not sure why this is not a very common strategy in the
+tools we examined. As far as we know, there is only one tool published,
+LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
+effect of manipulating weights.
+
+\tmnote{confusing -- is paraglide now the only tool or not?}
+
+It's not very clear why this is not so common perhaps just momentum? Is
+this hidden in other visualization systems under the monkier of
+``distance metric''? Also, weighting objectives is a relatively
+numerical process and perhaps this is simply done without visualization
+support where, for example, numerical optimization would be very
+effective?
+
+\tmnote{the ValueCharts paper did this. Further, I do believe it is part of some systems, but I couldn't point you to them now.}
+
 
 \subsection{Is the visualization community already doing this?}
 \label{is-vis-already-doing-this}
@@ -394,27 +422,8 @@ comprehensively examine all the options.
 
 %\tmnote{this section is unclear to me.}
 
-\subsection{Weighted parameter lists are
-missing}\label{weighted-parameter-lists-are-missing}
-
-Only one of the papers, ParaGlide~\citep{Bergner:2013}, concentrated on a
-weighted strategy. Furthermore, ParaGlide did this though computing and
-investigating a distance metric rather than directly adjusting the
-weights. We're not sure why this is not a very common strategy in the
-tools we examined. As far as we know, there is only one tool published,
-LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
-effect of manipulating weights.
-
-\tmnote{confusing -- is paraglide now the only tool or not?}
-
-It's not very clear why this is not so common perhaps just momentum? Is
-this hidden in other visualization systems under the monkier of
-``distance metric''? Also, weighting objectives is a relatively
-numerical process and perhaps this is simply done without visualization
-support where, for example, numerical optimization would be very
-effective?
-
-\tmnote{the ValueCharts paper did this. Further, I do believe it is part of some systems, but I couldn't point you to them now.}
+%\subsection{Weighted parameter lists are
+%missing}\label{weighted-parameter-lists-are-missing}
 
 \section{Conclusion}
 
