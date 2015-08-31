@@ -1,4 +1,3 @@
-\tmnote{abstract is blank?}
 
 The current literature on uncertainty visualization follows two main streams: perceptual studies and design studies.
 \emph{Perceptual studies} such as MacEachren et al.~\citep{MacEachren:2012} 
@@ -38,12 +37,19 @@ Not only could they help to run better perceptual studies by directly accounting
 (e.g., users following a certain strategy are ``better'' performing than others), but also support design study researchers
 by providing a better framework for problem and task characterization.
 
-In this position paper, we seek to conduct some first steps towards such a more sophisticated understanding of the role of users in 
-(uncertainty) visualization. Toward this gaol, we make the following contributions:
-\begin{itemize}
-\item We introduce 6 different decision making strategies from the decision theory literature~\citep{Payne:1993}.
-\item We analyze a set of 21 design study papers, classifying them according to these strategies.
-\item We discuss and advocate the following questions: What are common current decision making strategies? How can current approaches of task taxonomies and mantras be reconciled under the lens of decisions making/problem solving? How can better support \emph{different} decision making/problem solving strategies in our tools? \msnote{reorder, refine and extend if necessary}
+In this position paper, we seek to conduct some first steps towards such a more
+sophisticated understanding of the role of users in (uncertainty)
+visualization. Toward this gaol, we make the following contributions:
+\begin{itemize} 
+\item We introduce 6 different decision making strategies from
+      the decision theory literature~\citep{Payne:1993}.
+\item We analyze a set of 21 design study papers, classifying them according 
+      to these strategies.  
+\item We discuss and advocate the following questions: What
+      are common decision making strategies? How can current approaches of task
+      taxonomies and mantras be reconciled under the lens of decisions making?
+      How can we better support \emph{different} decision making strategies in
+      our tools?  
 \end{itemize}
   
 
@@ -219,7 +225,7 @@ each other in the sense that there is no clear optimal choice.
 
 To better understand how these different strategies are supported by current visualization tools,
 we coded 21 design study papers on visual parameter space analysis tools
-(the same set as Sedlmair et al. \citep{Sedlmair:2014}), and classified them according to strategy 
+(the same set as Sedlmair et al.~\citep{Sedlmair:2014}), and classified them according to strategy 
 type. We found that $15/21$ of the papers described
 some sort of strategy when describing the task analysis, user
 characterization, or case study. Table~\ref{tbl:decision-types} shows an overview of the results;
@@ -358,10 +364,11 @@ Based on this analysis, we would like to address a number of questions during th
 
 Lexicographic and elimination by aspects are the most popular heuristics
 by far. Both of these concentrate on one parameter at a time and are
-about filtering alternatives. \msnote{add a bit more in terms of summary here, if possible}
+about filtering alternatives.
 
-Only one of the papers, ParaGlide~\citep{Bergner:2013}, concentrated on a
-weighted strategy. Furthermore, ParaGlide did this though computing and
+Only one of the papers examined in Sedlmair et al.~\cite{Sedlmair:2014},
+ParaGlide~\citep{Bergner:2013}, concentrated on a
+weighted strategy. ParaGlide did this though computing and
 investigating a distance metric rather than directly adjusting the
 weights. We're not sure why this is not a very common strategy in the
 tools we examined. As far as we know, there is only one tool published,
@@ -380,29 +387,31 @@ effective?
 \tmnote{the ValueCharts paper did this. Further, I do believe it is part of some systems, but I couldn't point you to them now.}
 
 
-\subsection{Is the visualization community already doing this?}
-\label{is-vis-already-doing-this}
+\subsection{How can current approaches of task taxonomies and mantras be reconciled under the lens of decision making?}
 
-One question is do these problem solving heuristics exist already in the
-visualization literature but just in a different name? From the literature
-search we conducted the answer is no. There are elements of task support for
-these heuristics, like filtering, but a comprehensive strategy is never
-identified. Visualization systems are often designed around 
+%One question is do these problem solving heuristics exist already in the
+%visualization literature but just in a different name? From the literature
+%search we conducted the answer is no. There are elements of task support for
+%these heuristics, like filtering, but a comprehensive strategy is never
+%identified. 
+Visualization systems are often designed around 
 "overview first, zoom and filter, details on demand"~\cite{Shneiderman:1996} or
 a "global to local" search strategy~\cite{Sedlmair:2014}. These may help to
 address the more global heuristics like weighted additive or lexicographic.
-However, this is at odds with the more comparative heuristics like majority
-of confirming dimensions. \ttwnote{more?}
-So far, this does seem quite useful. For example, the local to global
-strategy, identified in Sedlmair et al.~\citep{Sedlmair:2014} could very
-easily suffer from the limitations of satisficing.
+However, the more comparative heuristics such as the majority of confirming 
+dimensions are much more local in nature, involving the direct comparison
+of multiple options.  In some ways this is the local to global
+strategy identified in Sedlmair et al.~\citep{Sedlmair:2014}. The user wants
+to start with some known value and then gradually expand their seach from
+this single focus point.
 
 \tmnote{Needs some thought. I don't think it is good to ask whether the vis communicity is already doing this. Rather, how can the current approaches of task taxonomies and mantras be reconciled with work in the problem solving / decision making world. What are the similarities, what are the differences?}
+\ttwnote{still rough...}
 
 
-\subsection{Should we be steering users to certain decision-making strategies?}
+\subsection{How can we better support \emph{different} decision making strategies?}
 
-We see this as an open question. Visualization concentrates on information
+Visualization concentrates on information
 presentation. There is evidence that the presentation of information will
 influence which decision making strategy one employs~\citep{Jarvenpaa:1990}.
 On the other hand, in real-world decision making there is often no clear
@@ -410,8 +419,13 @@ optimal decision to be made so it is difficult to evaluate which decision
 making heuristic is best. However, it seems that it is best to at least
 comprehensively examine all the options.
 
-\tmnote{again, I would rephrase towards 'how can we support *different* decision making / problem solving strategies'?}
-
+One of the strengths of a visualization tool is the ability to switch modes
+dynamically during data exploration. One could envision combining a
+global overview in combination with a focused pairwise comparison system.
+The global overview would remind the user of how much of the \emph{global}
+space they have explored. In addition, one could also dynamically filter
+the remaining options to reduce the number of comparisons in a process
+not unlike active learning.
 
 %\subsection{Common decisions in vis systems}
 %\label{common-decisions-in-vis-systems}
@@ -427,10 +441,10 @@ comprehensively examine all the options.
 
 \section{Conclusion}
 
-We have proposed a task-centered idea of evaluating the decisions users
-make while evaluating uncertainty. \tmnote{rephrase, perhaps: we are proposing to study more closely the impact that uncertainty information has on decisions and the implications for visual tool design. or sth like that.} We have enumerated some common decision
-making heuristics and evaluated if these are currently addressed by 
-visualization systems today. We found that these heuristics are not directly
-addressed by current systems and offered up several questions for
-discussion going forward.
+We are proposing to study more closely the impact that uncertainty information
+has on decisions and the implications for visual tool design. 
+We have enumerated some common decision making heuristics and evaluated
+if these are currently addressed by visualization systems today. We found that
+these heuristics are not directly addressed by current systems and offered up
+several questions for discussion going forward.
 
