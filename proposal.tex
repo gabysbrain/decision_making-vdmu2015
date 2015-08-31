@@ -1,21 +1,21 @@
 
-The current literature on uncertainty visualization follows two main streams: perceptual studies and design studies.
-\emph{Perceptual studies} such as MacEachren et al.~\citep{MacEachren:2012} 
+The literature on uncertainty visualization follows two main streams: perceptual studies and design studies.
+\emph{Perceptual studies} such as by MacEachren et al.~\citep{MacEachren:2012} 
 help us to better understand 
 how simple, low-level uncertainty tasks can be supported by visual encodings. 
-While the results of such studies can be seen as generalizable across a wide 
+While the results of such studies are generalizable across a  
 range of humans, the approach is not accounting for higher-level aspects, such as cognitive skills,
 problem solving strategies, or decision making.
 
 With these higher goals in mind, there has been an increasing focus on \emph{design studies}~\citep{Sedlmair:2012}.
 In this qualitative approach, researchers work together with end users to better understand their 
-(ill-specified) data analysis tasks, and to create a visualization tool
+data analysis tasks, and to create a visualization tool
 that supports these. In doing so, design studies provide us with instances of how
-actual problems were broken down into design decisions of actual tools, going far beyond
-low-level perceptual reasoning. These instances, however, are highly problem- and domain-specific.
+actual problems were broken down into design decisions, going far beyond
+low-level perceptual reasoning. Design studies, however, are highly problem- and domain-specific.
 Therefore, while some of the knowledge gained in designing these tools is
 ``transferable'' to other visualization tools, the results are often not
-``generalizable'' to the larger populace.
+``generalizable'' to the larger population. %populace.
 
 In this position paper, we argue that there is a gap between these two lines of work.
 While there are general task taxonomies~\citep{Brehmer:2013,Shneiderman:1996} and 
@@ -40,7 +40,7 @@ by providing a better framework for problem and task characterization.
 In this position paper, we seek to conduct some first steps towards such a more
 sophisticated understanding of the role of users in (uncertainty)
 visualization. Toward this goal, we make the following contributions:
-\begin{itemize} 
+\begin{itemize} [noitemsep,nolistsep]
 \item We introduce 6 different decision making strategies from
       the decision theory literature~\citep{Payne:1993}.
 \item We analyze a set of 21 design study papers, classifying them according 
@@ -199,14 +199,14 @@ visualization. Toward this goal, we make the following contributions:
 
 \section{Decision Making Strategies}\label{heuristics}
 
-In the following, we enumerate 6 different decision making strategies from the book \emph{``The adaptive decision
+In the following, we describe 6 different decision making strategies, taken from the book \emph{``The adaptive decision
 maker''}~\citep{Payne:1993}, and discuss them in the light of visualization research.
-The strategies characterize how people make contingent decisions in which, all alternative
-action possibilities, events that relate actions to outcomes, and the objective
+The strategies characterize how people make contingent decisions in which all alternative
+action possibilities---events that relate actions to outcomes---and the objective
 values are all available to the decision maker.
 All strategies assume that the decision maker (or user in our case)
 is selecting a decision item from a list of discrete choices. Each item
-has multiple attributes (objectives). These objectives are competing with
+has multiple \emph{attributes} (objectives). These objectives are competing with
 each other in the sense that there is no clear optimal choice. 
 %What is also
 %important about the strategies is that depending on how information is 
@@ -225,8 +225,9 @@ each other in the sense that there is no clear optimal choice.
 
 To better understand how these different strategies are supported by current visualization tools,
 we coded 21 design study papers on visual parameter space analysis tools
-(the same set as Sedlmair et al.~\citep{Sedlmair:2014}), and classified them according to strategy 
-type. We found that $15/21$ of the papers described
+(the same set as Sedlmair et al.~\citep{Sedlmair:2014}). We classified these papers based on which strategy 
+type, if any, was employed by the users of the tools when describing the task analysis, user characterization,
+or case study. We found that $15/21$ of the papers described
 some sort of strategy when describing the task analysis, user
 characterization, or case study. Table~\ref{tbl:decision-types} shows an overview of the results;
 specific examples will be discussed below.
@@ -235,21 +236,7 @@ specific examples will be discussed below.
 %by far. Both of these concentrate on one parameter at a time and are
 %about filtering alternatives. 
 
-\begin{table}[tb]
-  \begin{center}
-    \caption{We classified the 21 papers listed in 
-             Sedlmair et al.~\citep{Sedlmair:2014} for which decision making
-             heuristics, if any, are employed by the users of the tools
-             when describing the task analysis, user characterization,
-             or case study.  We could identify one of the decision making 
-             heuristics in $15/21$ of the papers. The lexicographic and 
-             elimination by aspects heuristics were the most commonly
-             employed.
-    }
-    \label{tbl:decision-types}
-    \inputfile{paper_codes}
-  \end{center}
-\end{table}
+
 
 
 
@@ -265,16 +252,32 @@ the option with the highest weighted sum of attributes.
 A version of this strategy considers all attributes evenly but still
 the selection is made based on the total weighted value.
 
-Practical issues with this include mapping attributes to numerical values
+Practical issues with this strategy include mapping attributes to numerical values
 and examining the effects of adjusting the weights. In our evaluation of
 design studies this rule is not directly supported. We considered that
 systems supporting the evaluation of distance functions such as 
 in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
+\msnote{I would simply cut starting here ...}
 LineUp~\citep{Gratzl:2013} is the only system as far as we know that
 directly supports the evaluation of numerical weights on objectives. 
 \tmnote{But Tuner does too.}
 \ttwnote{not really, how?}
 \tmnote{the 'parameters' considered in the med image segmentation example are actual weights of an energy function. So, we are manipulating weights.}
+\msnote{... to here}
+
+\begin{table}[tb]
+  \begin{center}
+    \caption{Classification of the 21 papers listed in 
+             Sedlmair et al.~\citep{Sedlmair:2014} according to which decision making
+             strategies.  %We could identify one of the decision making 
+             %heuristics in $15/21$ of the papers. The lexicographic and 
+             %elimination by aspects heuristics were the most commonly
+             %employed.
+    }
+    \label{tbl:decision-types}
+    \inputfile{paper_codes}
+  \end{center}
+\end{table}
 
 \subsection{Strategy 2: Lexicographic}\label{lexicographic}
 
@@ -288,22 +291,21 @@ Among our 21 reviewed papers, this is a relatively common strategy.
 Many visualization systems, for example, Tuner~\cite{Torsney-Weir:2011} and
 Luboschick et al.~\citep{Luboschik:2014} allow the user to prioritize a few
 objective measures and evaluate the outputs based on those few. Naturally,
-when presented with more attributes than can be easily compared between
+when presented with more attributes than can be easily compared between,
 one can filter
-these attributes down to just the core set. This is a form of dimension 
-reduction (dimensional filtering).
+these attributes down to just the core set. 
+%This is a form of dimension reduction (dimensional filtering).
 
 \subsection{Strategy 3: Elimination by aspects}\label{elimination-by-aspects}
 
-Rather than concentrating on finding the optimal options, one could
-instead set thresholds and filter out the unacceptable decisions. This process
-is repeated until a final choice remains. This process is called
+Rather than concentrating on finding the optimal options, a user might
+instead set thresholds and filter out unacceptable decisions. This process
+is repeated until a final choice remains, and is called
 elimination by aspects.
 
-This heuristic is frequently employed in many visualization systems with
-perhaps the system developed by Spence et al.~\citep{Spence:1995} being a
-direct application of this strategy. The user can interactively filter
-objective (output) dimensions into acceptable and unacceptable regions and
+Elimination by aspects is frequently employed in many visualization systems, 
+such as in the system developed by Spence et al.~\citep{Spence:1995}. The user can interactively filter
+objectives into acceptable and unacceptable regions and
 see that effect on the selections in the parameter space. 
 Vismon~\citep{Booshehrian:2012} also uses a similar strategy.
 
@@ -312,17 +314,17 @@ Vismon~\citep{Booshehrian:2012} also uses a similar strategy.
 
 If, like in the elimination by aspects strategy, one can articulate for
 each attribute a good and bad level then one could label each attribute
-of each decision option by this. Then one could simply count the number of
-attributes that are labeled "good" and compare this against the number of
-"bad" labels and select the option with the highest difference. This has
-been called the frequency of good and bad features.
+of each decision option by this. The frequency of good and bad features strategy 
+then depicts simply counting the number of
+attributes that are labeled "good",  comparing it against the number of
+"bad" labels, and selecting the option with the highest difference. 
 
-This strategy is never directly addressed by the visualization community
-but the closest example we could find was the work by 
+We found that this strategy was never directly addressed in our study.
+The closest example we could find was the work by 
 Coffey et al.~\citep{Coffey:2013}. In their system the user could browse
 through simulations and find similar ones which may be closer to what
 the user is looking for. The frequency of good and bad features between the
-choices of needle design determined the final needle design decision.
+choices of design physical instrument (a needle in this case) determined the final design decision.
 
 \subsection{Strategy 5: Satisficing}\label{satisficing}
 
@@ -342,7 +344,7 @@ up-front.
 \subsection{Strategy 6: Majority of confirming
 dimensions}\label{majority-of-confirming-dimensions}
 
-As an alternative to looking at all decision options at once one could 
+As an alternative to looking at all decision options at once a user could 
 instead examine them in a pairwise manner. The "winner" of each pairing is
 compared against the next choice and so on until a final optimal choice
 prevails.
@@ -361,20 +363,21 @@ a list of simulation outputs.
 
 Based on this analysis, we would like to address a number of questions during the workshop.
 
-\subsection{What are common decision making strategies?}
+\subsection{What are current decision making strategies supported by visualization tools?}
 
-Lexicographic and elimination by aspects are the most popular heuristics
+In our study of 21 papers, we found that lexicographic and elimination by aspects were the most popular strategies
 by far. Both of these concentrate on one parameter at a time and are
 about filtering alternatives.
 
-Only one of the papers examined in Sedlmair et al.~\cite{Sedlmair:2014},
-ParaGlide~\citep{Bergner:2013}, concentrated on a
-weighted strategy. ParaGlide did this though computing and
+The other strategies were rarer. For instance, only one of the papers examined in Sedlmair et al.~\cite{Sedlmair:2014},
+ParaGlide~\citep{Bergner:2013} concentrated on a
+weighted strategy \msnote{in the table there are three, needs to be fixed or re-phrased}. ParaGlide did this through computing and
 investigating a distance metric rather than directly adjusting the
 weights. We're not sure why this is not a very common strategy in the
-tools we examined. As far as we know, there is only one tool published,
-LineUp~\citep{Gratzl:2013}, that allows the user to directly see the
-effect of manipulating weights.
+tools we examined \msnote{given that it is so cool for vis ... (say why it would be nice to have more)}. As far as we know, there is only 
+very little work on visualization tools that allows the user to directly see the
+effect of manipulating weights, such as LineUp~\citep{Gratzl:2013}, or ValueCharts \msnote{add reference}.
+\msnote{Yes, good to have LineUp here and not in Section 2.}
 \ttwnote{what else...}
 \tmnote{ValueCharts (a precursor to LineUp)}
 
@@ -396,22 +399,22 @@ effect of manipulating weights.
 %these heuristics, like filtering, but a comprehensive strategy is never
 %identified. 
 
-Visualization systems are often designed around "overview first, zoom and
-filter, details on demand"~\cite{Shneiderman:1996}, as well as a "global to local,"
-or "local to global" search strategy~\cite{Sedlmair:2014}. Both task 
-taxonomies and decision making heuristics are developed around how users
-go about solving tasks.
-Task taxonomies
-are focused on the engineering aspects of the tools in terms of what
-features are required, for example, filtering or zooming. The decision
-making heuristics are more focused on how these tasks can be combined to
+Visualization systems are often designed around the visual information-seeking mantra "overview first, zoom and
+filter, details on demand"~\cite{Shneiderman:1996}, or other strategies such as "global to local,"
+or "local to global"~\cite{Sedlmair:2014}. Beyond that, task taxonomies, such as the one by Brehmer and Munzner~\citep{Brehmer:2013}, offer a more fine-grained resolution of
+of what features are required, for example, filtering or zooming. 
+The interesting question is how this visualization lens on strategies relate to the strategies as discussed in the cognitive science community. 
+Both are developed around how users
+go about solving tasks. However, while the visualization lens
+is mostly focused on the engineering aspects of the tools, 
+the CogSci decision making strategies are more focused on how these tasks can be combined to
 solve a problem.
-With better understanding of the decision making process used one could better decide which tasks to prioritize for which users.
-We propose that linking these task taxonomies with the different problem 
-solving heuristics in terms of which heuristics are supported by which 
+We believe that with better understanding of decision making processes used one could better decide which tasks to prioritize for which users.
+We propose that linking task taxonomies with the different problem 
+solving strategies in terms of which strategies are supported by which 
 tasks will allow for more robust decisions about which tasks, and by
 extension, which visual encodings to employ when designing a visualization
-tool.
+tool. \msnote{maybe break down into 2 sentences?}
 
 %These may help to
 %address the more global heuristics like weighted additive or lexicographic.
@@ -423,17 +426,19 @@ tool.
 %this single focus point.
 
 %\tmnote{Needs some thought. Rather, how can the current approaches of task taxonomies and mantras be reconciled with work in the problem solving / decision making world. What are the similarities, what are the differences?}
-\ttwnote{still rough...}
+\ttwnote{still rough...} \msnote{yes, I tried to crisp it a bit}
 
 
 \subsection{How can we better support \emph{different} decision making strategies?}
 
-Visualization concentrates on information
-presentation. \tmnote{this last sentence I see contested. Perhaps this is better: ``A major design decision for a visualization tool is a proper visual encoding.''} There is evidence that the presentation of information (visual encoding) will
+%Visualization concentrates on information
+%presentation. \tmnote{this last sentence I see contested. Perhaps this is better: ``A major design decision for a visualization tool is a proper visual encoding.''} 
+A major design decision for a visualization tool is a proper visual encoding.
+There is evidence that the visual encoding of information will
 influence which decision making strategy one employs~\citep{Jarvenpaa:1990}.
 On the other hand, in real-world decision making there is often no clear
-optimal decision to be made so it is difficult to evaluate which decision
-making heuristic is best. However, it seems that it is best to at least
+optimal decision to be made, so it is difficult to evaluate which decision
+making strategy is best. However, it seems that it is best to at least
 comprehensively examine all the options.
 
 One of the strengths of a visualization tool is the ability to switch modes
@@ -461,7 +466,10 @@ not unlike active learning.
 We are proposing to study more closely the impact that uncertainty information
 has on decisions and the implications for visual tool design. 
 We have enumerated some common decision making heuristics and evaluated
-if these are currently addressed by visualization systems today. We found that
-these heuristics are not directly addressed by current systems and offered up
-several questions for discussion going forward.
+if these are currently addressed by visualization systems today. We hope that our work
+will spark interesting discussions at the workshop, and will open new avenues
+for visualization research. 
+%We found that
+%these heuristics are not directly addressed by current systems and offered up
+%several questions for discussion going forward.
 
