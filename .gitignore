@@ -9,4 +9,5 @@ uw2015.pdf
 *.ps
 *.bbl
 *.blg
+*.synctex.gz
 images/*.eps
