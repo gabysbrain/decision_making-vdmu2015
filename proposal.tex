@@ -223,18 +223,19 @@ each other in the sense that there is no clear optimal choice.
 %The following heuristics \tmnote{need a proper reference to the table} are all described in \emph{The adaptive decision
 %maker}~\citep{Payne:1993}.
 
-To better understand how these different strategies are supported by current visualization tools,
-we coded 21 design study papers on visual parameter space analysis tools
-(the same set as Sedlmair et al.~\citep{Sedlmair:2014}). We classified these papers based on which strategy 
-type, if any, was employed by the users of the tools when describing the task analysis, user characterization,
-or case study. We found that $15/21$ of the papers described
-some sort of strategy when describing the task analysis, user
-characterization, or case study. Table~\ref{tbl:decision-types} shows an overview of the results;
+To better understand how these different strategies are supported by current
+visualization tools, we coded 21 design study papers on visual parameter space
+analysis tools (the same set as Sedlmair et al.~\citep{Sedlmair:2014}). We
+classified these papers based on the main strategy used, if any,
+by the users of the tools when describing the task analysis, user
+characterization, or case study. We found that $15/21$ of the papers described
+some sort of strategy when describing the task analysis, user characterization,
+or case study. Table~\ref{tbl:decision-types} shows an overview of the results;
 specific examples will be discussed below.
 %%MS: This is a result, i.e. should later, I moved it
-%Lexicographic and elimination by aspects are the most popular heuristics
-%by far. Both of these concentrate on one parameter at a time and are
-%about filtering alternatives. 
+%Lexicographic and elimination by aspects are the most popular heuristics by
+%far. Both of these concentrate on one parameter at a time and are about
+%filtering alternatives. 
 
 
 
@@ -257,13 +258,13 @@ and examining the effects of adjusting the weights. In our evaluation of
 design studies this rule is not directly supported. We considered that
 systems supporting the evaluation of distance functions such as 
 in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
-\msnote{I would simply cut starting here ...}
-LineUp~\citep{Gratzl:2013} is the only system as far as we know that
-directly supports the evaluation of numerical weights on objectives. 
-\tmnote{But Tuner does too.}
-\ttwnote{not really, how?}
-\tmnote{the 'parameters' considered in the med image segmentation example are actual weights of an energy function. So, we are manipulating weights.}
-\msnote{... to here}
+%\msnote{I would simply cut starting here ...}
+%LineUp~\citep{Gratzl:2013} is the only system as far as we know that
+%directly supports the evaluation of numerical weights on objectives. 
+%\tmnote{But Tuner does too.}
+%\ttwnote{not really, how?}
+%\tmnote{the 'parameters' considered in the med image segmentation example are actual weights of an energy function. So, we are manipulating weights.}
+%\msnote{... to here}
 
 \begin{table}[tb]
   \begin{center}
@@ -369,17 +370,15 @@ In our study of 21 papers, we found that lexicographic and elimination by aspect
 by far. Both of these concentrate on one parameter at a time and are
 about filtering alternatives.
 
-The other strategies were rarer. For instance, only one of the papers examined in Sedlmair et al.~\cite{Sedlmair:2014},
+Some of the examples of strategy occured in non-obvious ways.  For example,
 ParaGlide~\citep{Bergner:2013} concentrated on a
-weighted strategy \msnote{in the table there are three, needs to be fixed or re-phrased}. ParaGlide did this through computing and
+weighted strategy but did this through
 investigating a distance metric rather than directly adjusting the
 weights. We're not sure why this is not a very common strategy in the
 tools we examined \msnote{given that it is so cool for vis ... (say why it would be nice to have more)}. As far as we know, there is only 
 very little work on visualization tools that allows the user to directly see the
-effect of manipulating weights, such as LineUp~\citep{Gratzl:2013}, or ValueCharts \msnote{add reference}.
-\msnote{Yes, good to have LineUp here and not in Section 2.}
-\ttwnote{what else...}
-\tmnote{ValueCharts (a precursor to LineUp)}
+effect of manipulating weights, such as LineUp~\citep{Gratzl:2013}, or 
+ValueCharts~\citep{Carenini:2004}.
 
 %It's not very clear why this is not so common perhaps just momentum? Is
 %this hidden in other visualization systems under the monkier of
@@ -409,12 +408,13 @@ go about solving tasks. However, while the visualization lens
 is mostly focused on the engineering aspects of the tools, 
 the CogSci decision making strategies are more focused on how these tasks can be combined to
 solve a problem.
-We believe that with better understanding of decision making processes used one could better decide which tasks to prioritize for which users.
-We propose that linking task taxonomies with the different problem 
-solving strategies in terms of which strategies are supported by which 
-tasks will allow for more robust decisions about which tasks, and by
-extension, which visual encodings to employ when designing a visualization
-tool. \msnote{maybe break down into 2 sentences?}
+We believe that with a better understanding of the decision making processes 
+used one could better decide which tasks to prioritize for which users.
+We propose that the task taxonomies can be linked with the different problem
+solving strategies in terms of which tasks support which strategies. This 
+link will allow for more robust decisions about
+which tasks and which visual encodings to employ when designing a 
+visualization tool.
 
 %These may help to
 %address the more global heuristics like weighted additive or lexicographic.
@@ -426,7 +426,7 @@ tool. \msnote{maybe break down into 2 sentences?}
 %this single focus point.
 
 %\tmnote{Needs some thought. Rather, how can the current approaches of task taxonomies and mantras be reconciled with work in the problem solving / decision making world. What are the similarities, what are the differences?}
-\ttwnote{still rough...} \msnote{yes, I tried to crisp it a bit}
+%\ttwnote{still rough...} \msnote{yes, I tried to crisp it a bit}
 
 
 \subsection{How can we better support \emph{different} decision making strategies?}
@@ -465,7 +465,7 @@ not unlike active learning.
 
 We are proposing to study more closely the impact that uncertainty information
 has on decisions and the implications for visual tool design. 
-We have enumerated some common decision making heuristics and evaluated
+We have enumerated some common decision making strategies and evaluated
 if these are currently addressed by visualization systems today. We hope that our work
 will spark interesting discussions at the workshop, and will open new avenues
 for visualization research. 
