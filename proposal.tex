@@ -1,7 +1,7 @@
 \tmnote{abstract is blank?}
 
 The current literature on uncertainty visualization follows two main streams: perceptual studies and design studies.
-\emph{Perceptual studies} such as xxx help us to better understand 
+\emph{Perceptual studies} such as \ttwwarning{xxx} help us to better understand 
 how simple, low-level uncertainty tasks can be supported by visual encodings. 
 While the results of such studies can be seen as generalizable across a wide 
 range of humans, the approach is not accounting for higher-level aspects, such as cognitive skills,
@@ -23,7 +23,7 @@ models~\citep{Meyer:2012,Sacha:2014}
 %
 \msnote{agree, cite Tory as well (although I would not claim that you guys were the first ever to talk about mental models :-), you could also cite the TOI paper here, imho this is exactly what we try to do} 
 %
-attempting to bridge the gap, we argue that a more systematic \emph{user modeling } is missing.
+attempting to bridge the gap, we argue that a more systematic \emph{user modeling} is missing.
 The visualization community has already started examining personality types and
 how those correspond to visualizations~\citep{Conati:2014}. Beyond that, we advocate for a more thorough 
 investigation and understanding of the overall \emph{problem solving} strategies when extracting information from data, 
@@ -221,7 +221,7 @@ we coded 21 design study papers on visual parameter space analysis tools
 (the same set as Sedlmair et al. \citep{Sedlmair:2014}), and classified them according to strategy 
 type. We found that $15/21$ of the papers described
 some sort of strategy when describing the task analysis, user
-characterization, or case study. Table~\ref{tab:decision-types} shows an overview of the results;
+characterization, or case study. Table~\ref{tbl:decision-types} shows an overview of the results;
 specific examples will be discussed below.
 %%MS: This is a result, i.e. should later, I moved it
 %Lexicographic and elimination by aspects are the most popular heuristics
@@ -230,13 +230,14 @@ specific examples will be discussed below.
 
 \begin{table}[tb]
   \begin{center}
-    \caption{Decision types}
+    \caption{We coded the 21 papers listed in 
+             Sedlmair et al.~\citep{Sedlmair:2014} for which decision making
+             heuristics, if any, are employed.
+    }
     \label{tbl:decision-types}
     \inputfile{paper_codes}
   \end{center}
 \end{table}
-
-\tmnote{pretty up table}
 
 
 
@@ -258,7 +259,9 @@ design studies this rule is not directly supported. We considered that
 systems supporting the evaluation of distance functions such as 
 in systems such as ParaGlide~\citep{Bergner:2013} as using this strategy.
 LineUp~\citep{Gratzl:2013} is the only system as far as we know that
-directly supports the evaluation of numerical weights on objectives. \tmnote{But Tuner does too.}
+directly supports the evaluation of numerical weights on objectives. 
+\tmnote{But Tuner does too.}
+\ttwnote{not really, how?}
 
 \subsection{Strategy 2: Lexicographic}\label{lexicographic}
 
@@ -280,9 +283,9 @@ reduction (filtering).
 \subsection{Strategy 3: Elimination by aspects}\label{elimination-by-aspects}
 
 Rather than filtering in order to find the optimal decision, one could
-also set thresholds and filter out the unacceptable decisions. \tmnote{rather than filtering ... filtering?!?!} This process
+also set thresholds and filter out the unacceptable decisions. \tmnote{rather than filtering ... filtering?!?!}\ttwnote{rather than optimal ... unacceptable} This process
 is repeated until a final choice remains. This process is called
-the majority of confirming dimensions strategy. \tmnote{huh? its called elimination by aspects!?}
+elimination by aspects.
 
 This heuristic is frequently employed in many visualization systems with
 perhaps the system developed by Spence et al.~\citep{Spence:1995} being a
@@ -314,7 +317,7 @@ Satisficing does not consider the entire set of decision options holistically.
 Rather, when employing this strategy, one considers each option one at a time.
 Whether all attributes of the choice are considered or just a few depends on
 the person but either way the first acceptable option encountered is selected.
-We did not see any evidence in the visualization \tmnote{Why do you keep saying 'in the visualization'???  this is not proper english?!} of this strategy being
+We did not see any evidence in the literature of this strategy being
 employed. In some ways it is at odds with visualization tool development.
 Usually, one assumes that all data must be examined or all data is known
 up-front.
@@ -337,7 +340,7 @@ order that the options are considered one may get a very different outcome. In
 Fluid Explorer~\cite{Bruckner:2010} and Paramorama~\citep{Pretorius:2011} this
 is done by the user manually selecting an optimal candidate simulation from 
 a list of simulation outputs.
-\ttwnote{Eric Brochu's work is probably the best example} \tmnote{yes and no, it is an active learning approach / feature, but I do not get to see all comparisons, just the ones the algorithm needs me to look at.}
+%\ttwnote{Eric Brochu's work is probably the best example} \tmnote{yes and no, it is an active learning approach / feature, but I do not get to see all comparisons, just the ones the algorithm needs me to look at.}
 
 \subsection{Summary}
 Lexicographic and elimination by aspects are the most popular heuristics
